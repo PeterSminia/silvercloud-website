@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact – SilverCloud</title>
+<meta name="description" content="Neem contact op met SilverCloud voor een kennismaking of adviesgesprek.">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body class="">
+<a class="skip" href="#inhoud">Direct naar de inhoud</a>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="../index.html"><img src="../assets/img/silvercloud-logo-kleur.svg" alt="SilverCloud"></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+    <ul class="menu" id="menu"><li><a href="../index.html">Home</a></li><li><a href="../computing/index.html">Computing</a></li><li><a href="../zorg/index.html">Zorg</a></li><li><a href="../kennis/index.html">Kennis &amp; cases</a></li><li><a href="../over-ons/index.html">Over ons</a></li><li><a class="btn btn-primary" href="../contact/index.html">Contact</a></li></ul>
+  </div>
+</header>
+
+<main id="inhoud">
+
+<section class="hero"><div class="container grid-2" style="align-items:start">
+  <div>
+    <span class="badge">Contact</span>
+    <h1 class="display" style="margin:16px 0">Laten we kennismaken</h1>
+    <p class="lead">Vertel ons kort waar u mee bezig bent. We nemen binnen één werkdag contact met u op.</p>
+    <div class="lijn" style="margin-top:32px">
+      <p><strong>SilverCloud</strong><br>Ohmstraat 18-A<br>3861 NB Nijkerk</p>
+      <p><a href="tel:+31882560050">088 256 00 50</a><br><a href="mailto:info@silvercloud.nl">info@silvercloud.nl</a></p>
+    </div>
+  </div>
+  <form class="form card" action="#" method="post" onsubmit="alert('Dit is een concept: het formulier is nog niet gekoppeld.'); return false;">
+    <p class="note">Concept: dit formulier is nog niet gekoppeld aan een mailbox of CRM.</p>
+    <div class="row"><label>Naam<input name="naam" autocomplete="name" required></label><label>Organisatie<input name="organisatie" autocomplete="organization"></label></div>
+    <div class="row"><label>E-mailadres<input type="email" name="email" autocomplete="email" required></label><label>Telefoon<input type="tel" name="telefoon" autocomplete="tel"></label></div>
+    <label>Waar gaat uw vraag over?<select name="onderwerp"><option>SilverCloud Computing (mkb)</option><option>Netwerkregie (zorg)</option><option>CareDesk (zorg)</option><option>Lokalisatie &amp; Leefcirkels (zorg)</option><option>Hulpmiddelenbeheer / AssetGuard (zorg)</option><option>Iets anders</option></select></label>
+    <label>Uw vraag<textarea name="bericht"></textarea></label>
+    <button class="btn btn-primary" type="submit">Verstuur</button>
+  </form>
+</div></section>
+
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img class="footer-logo" src="../assets/img/silvercloud-logo-kleur-op-donker.svg" alt="SilverCloud">
+        <p>Eén partner, twee expertises: betrouwbare IT voor het mkb en technologie die werkt voor de zorg.</p>
+      </div>
+      <div><h4>Computing</h4><ul><li><a href="../computing/index.html#werkplek">Digitale werkplek</a></li><li><a href="../computing/index.html#netwerken">Slimme netwerken</a></li><li><a href="../computing/index.html#telefonie">Zakelijke telefonie</a></li><li><a href="../computing/index.html#helpdesk">Helpdesk &amp; beheer</a></li></ul></div>
+      <div><h4>Zorg</h4><ul><li><a href="../zorg/netwerkregie/index.html">Netwerkregie</a></li><li><a href="../zorg/caredesk/index.html">CareDesk</a></li><li><a href="../zorg/lokalisatie-leefcirkels/index.html">Lokalisatie &amp; Leefcirkels</a></li><li><a href="../zorg/assetguard/index.html">Hulpmiddelenbeheer (AssetGuard)</a></li></ul></div>
+      <div><h4>SilverCloud</h4><ul><li><a href="../over-ons/index.html">Over ons &amp; werkwijze</a></li><li><a href="../kennis/index.html">Kennis &amp; cases</a></li><li><a href="../contact/index.html">Contact</a></li><li><a href="#">Privacyverklaring</a></li><li><a href="#">Algemene voorwaarden</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 SilverCloud</span><span>Ohmstraat 18-A, 3861 NB Nijkerk · <a href="tel:+31882560050">088 256 00 50</a> · <a href="mailto:info@silvercloud.nl">info@silvercloud.nl</a> · KvK [invullen]</span></div>
+  </div>
+</footer>
+<span class="concept" title="Eerste voorstel, nog niet definitief">Concept v0.2</span>
+<script>
+  (function () {
+    var b = document.querySelector('.menu-toggle'), m = document.getElementById('menu');
+    if (!b) return;
+    b.addEventListener('click', function () { var o = m.classList.toggle('open'); b.setAttribute('aria-expanded', o); });
+  })();
+</script>
+</body>
+</html>
