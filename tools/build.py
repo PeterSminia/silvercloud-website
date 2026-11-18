@@ -23,7 +23,7 @@ ICON = {
  'kaart': '<path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/>',
  'pijl': '<path d="M4 12h16M14 6l6 6-6 6"/>',
 }
-from extra import latest, logo_strip, wp_card, certs, zorgkennis, tech_partners, POSTS, EVRESYS_URL, BLYOTT_URL, BLYOTT_AT
+from extra import latest, logo_strip, wp_card, certs, zorgkennis, tech_partners, POSTS, EVRESYS_URL, EVRESYS_LEEF, BLYOTT_URL, BLYOTT_AT
 import extra
 
 def icon(n):
@@ -85,7 +85,7 @@ def page(path, title, desc, body, label='', nav='', sub=None):
     <div class="footer-bottom"><span>© 2026 SilverCloud</span><span>Ohmstraat 18-A, 3861 NB Nijkerk · <a href="tel:+31882560050">088 256 00 50</a> · <a href="mailto:info@silvercloud.nl">info@silvercloud.nl</a> · KvK [invullen]</span></div>
   </div>
 </footer>
-<span class="concept" title="Voorstel, nog niet definitief">Concept v0.3</span>
+<span class="concept" title="Voorstel, nog niet definitief">Concept v0.4</span>
 <script>
   (function () {{
     var b = document.querySelector('.menu-toggle'), m = document.getElementById('menu');
@@ -710,7 +710,7 @@ page('zorg/zorgtechnologie', 'Zorgtechnologie – SilverCloud Zorg',
   <ul class="checklist">
     <li><strong>Op een netwerk dat erop is ontworpen</strong>: dekking, segmentatie en beschikbaarheid via <a href="{r}zorg/netwerkregie/">Netwerkregie</a></li>
     <li><strong>Met ondersteuning die de zorg begrijpt</strong>: vragen en storingen via <a href="{r}zorg/caredesk/">CareDesk</a>, één aanspreekpunt</li>
-    <li><strong>Twee routes</strong>: een complete basis, of een aanvulling op uw bestaande zorgoproepsysteem</li>
+    <li><strong>Behoud wat goed werkt</strong>: Evresys als aanvulling op uw bestaande zorgoproepsysteem, of als complete basis. <a href="{r}zorg/lokalisatie-leefcirkels/#aanvulling">Zo werkt de aanvulling</a></li>
     <li><strong>Geborgd</strong>: ingericht volgens NEN 7510, ISO 27001 en ISO 9001</li>
   </ul>
 </div></section>
@@ -787,6 +787,30 @@ page('zorg/lokalisatie-leefcirkels', 'Lokalisatie & Leefcirkels – Blyott en Ev
 </div></section>
 
 {tech_partners(r)}
+
+<section class="section" id="aanvulling"><div class="container">
+  <div class="section-head"><span class="kicker">Evresys als aanvulling</span><h2>Behoud wat goed werkt. Voeg toe wat nog ontbreekt.</h2>
+  <div class="lijn accent"><p class="lead">Veel zorginstellingen hebben al jaren een goed werkend zorgoproepsysteem. Evresys hoeft dat niet te vervangen: het werkt ernaast en voegt precies de functies toe die nog ontbreken.</p></div></div>
+  <div class="grid-2" style="align-items:start">
+    <div class="card flat">{icon('bel')}<h3>Wat is een zorgoproepsysteem?</h3><p>Een zorgoproepsysteem (ook wel verpleegoproepsysteem) is de vaste alarmketen van een zorglocatie. Cliënten roepen hulp in met een oproepknop, trekkoord of halszender. Het systeem stuurt de oproep naar de juiste medewerker, op een zorgtelefoon, pieper of werkplek. Vaak zijn ook domotica en sensoren erop aangesloten, zoals deur- en bedsensoren.</p><p>De infrastructuur ligt er, medewerkers kennen de werkwijze en de alarmopvolging is ingericht. Als die basis goed functioneert, is vervangen zelden het logische vertrekpunt.</p></div>
+    <div class="card flat">{icon('cirkel')}<h3>Wat Evresys daaraan toevoegt</h3><p>Een klassiek zorgoproepsysteem is niet primair ontworpen voor nauwkeurige lokalisatie of individuele bewegingsvrijheid. Daar voegt Evresys context aan toe:</p>
+      <ul class="checklist"><li><strong>Leefcirkels per cliënt</strong>, in plaats van een hele afdeling op dezelfde manier af te sluiten</li><li><strong>Dwaalalarmering</strong>, met de melding via de Evresys App óf via uw bestaande zorgoproepsysteem</li><li><strong>Binnen- en buitenlokalisatie</strong> als onderdeel van de zorgrespons</li><li><strong>Deurintegratie</strong>: toegang dynamisch per cliënt</li><li><strong>Medewerkersveiligheid en Push-to-Talk</strong> als extra laag</li></ul></div>
+  </div>
+  <h3 style="margin:48px 0 16px">Twee systemen, één zorgproces</h3>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Bestaand zorgoproepsysteem</th><th>Evresys voegt toe</th><th>Gezamenlijk resultaat</th></tr></thead>
+    <tbody>
+      <tr><td>Oproep- en alarmdistributie</td><td>Locatie en context</td><td class="us">Gerichtere opvolging</td></tr>
+      <tr><td>Bestaande apparatuur en werkwijze</td><td>Leefcirkels</td><td class="us">Meer individuele vrijheid</td></tr>
+      <tr><td>Bekende werkplek van de medewerker</td><td>Dwaalalarm</td><td class="us">Alarm in de bestaande keten</td></tr>
+      <tr><td>Bestaande investering</td><td>Aanvullende infrastructuur</td><td class="us">Geen volledige vervanging</td></tr>
+    </tbody></table></div>
+  <div class="grid-2" style="margin-top:48px;align-items:start">
+    <div><h3>Waarom dit verstandig is</h3><p class="muted">Een volledige vervanging raakt techniek, gebouwen, werkprocessen, scholing en continuïteit. Met een aanvullende aanpak koppelt u innovatie los van vervanging. U behoudt de vertrouwde alarmketen en voegt Evresys alleen toe waar nieuwe zorgdoelen daarom vragen. Evresys werkt daarbij samen met uw bestaande leverancier, niet ertegen.</p></div>
+    <div><h3>Wanneer is dit logisch?</h3><ul class="checklist"><li>Uw zorgoproepsysteem functioneert goed en heeft nog voldoende levensduur</li><li>U wilt leefcirkels, dwaaldetectie, locatie of wandelzones die het huidige systeem niet goed biedt</li><li>U wilt innoveren per locatie, afdeling of doelgroep</li><li>Bestaande werkprocessen en investeringen wegen zwaar</li></ul></div>
+  </div>
+  <div class="actions" style="margin-top:32px"><a class="btn btn-primary" href="{r}assets/downloads/whitepaper-evresys-aanvulling-zorgoproepsysteem.pdf" download>Download de whitepaper: Evresys als aanvulling</a><a class="btn btn-link" href="{EVRESYS_LEEF}" rel="noopener" target="_blank">Leefcirkels bij Evresys</a></div>
+</div></section>
 
 <section class="section mist" id="routes"><div class="container">
   <div class="section-head"><span class="kicker">Twee routes, één platform</span><h2>Niet iedere organisatie begint op hetzelfde punt</h2>

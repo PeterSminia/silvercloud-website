@@ -1,4 +1,4 @@
-# SilverCloud website (concept v0.3)
+# SilverCloud website (concept v0.4)
 
 Statische website (HTML en CSS, geen build-stap nodig) op basis van het huisstijlvoorstel *SilverCloud huisstijl* en het document *SilverCloud_Zorg_Websiteconcept_compleet.docx*.
 
@@ -46,6 +46,14 @@ Volgende wijzigingen: opnieuw `deploy.bat`, eventueel met een omschrijving: `dep
 - **AVG:** de lettertypes komen nu van Google Fonts. Host ze vóór livegang zelf in `public/assets/fonts/`.
 - Toestemming van Argos en ZGEM voor het gebruik van hun namen en citaten op de site (de citaten komen uit de eigen klantcase en blog).
 - Het label "Concept v0.2" rechtsonder: verwijderen in `site.css`/HTML bij livegang.
+
+## Wijzigingen in v0.4
+
+- Zorg in **drie proposities**: Netwerkregie, CareDesk en Zorgtechnologie (nieuwe overzichtspagina). Onder Zorgtechnologie: Lokalisatie & Leefcirkels, **Medewerkersveiligheid** (nieuw) en Hulpmiddelenbeheer.
+- Blok **"Wij kennen de zorg"** (cultuur, uitdagingen, oplossingen, applicaties, communicatie, sectoren) op Zorg, Over ons en de propositiepagina's. Over ons legt de nadruk op zorgkennis en zorgervaring.
+- **CareDesk** herschreven op basis van voorzet, brochure en blueprint; brochure als download.
+- **Evresys en Blyott** duidelijk benoemd, met links naar evresys.com en blyott.com.
+- **Evresys als aanvulling op een bestaand zorgoproepsysteem**: uitleg wat een zorgoproepsysteem is, wat Evresys toevoegt en wanneer dit logisch is.
 
 ## Wijzigingen in v0.3
 
