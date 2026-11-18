@@ -202,6 +202,9 @@ var h=location.hash.slice(1);if(h){{var c=document.querySelector('.chip[data-cat
         for n, logo, d, s in items:
             vis = f'<img class="partner-logo" src="{r}assets/img/partners/{logo}" alt="{n}">' if logo else f'<span class="partner-logo wm">{n}</span>'
             more = f'<a class="btn-link" href="{r}blog/{s}/">Lees meer</a>' if s and s in slugs else ''
+            site = {'Evresys': EVRESYS_URL, 'Blyott': BLYOTT_AT}.get(n)
+            if site:
+                more += f'<a class="btn-link" href="{site}" rel="noopener" target="_blank">Website van {n}</a>'
             cards += f'<div class="card flat">{vis}<h3>{n}</h3><p>{d}</p>{more}</div>'
         groups += f'<div class="section-head" style="margin-top:48px"><span class="kicker">{g}</span></div><div class="grid-3">{cards}</div>'
     page('partners', 'Partners – SilverCloud', 'De technologiepartners van SilverCloud: Fortinet, HPE Aruba, Datto, TOPdesk, Ultimo, Xelion, Evresys, Blyott, RSR, Wiliot en Docksters.', f'''
@@ -218,7 +221,7 @@ var h=location.hash.slice(1);if(h){{var c=document.querySelector('.chip[data-cat
         _redirect(out, old, new)
 
     # sitemap
-    paths = ['', 'computing/', 'zorg/', 'zorg/netwerkregie/', 'zorg/caredesk/', 'zorg/lokalisatie-leefcirkels/', 'zorg/medewerkersveiligheid/', 'zorg/assetguard/',
+    paths = ['', 'computing/', 'zorg/', 'zorg/netwerkregie/', 'zorg/caredesk/', 'zorg/zorgtechnologie/', 'zorg/lokalisatie-leefcirkels/', 'zorg/medewerkersveiligheid/', 'zorg/assetguard/',
              'kennis/', 'blog/', 'partners/', 'over-ons/', 'contact/'] + [f'blog/{p["slug"]}/' for p in POSTS]
     base = 'https://petersminia.github.io/silvercloud-website/'
     open(os.path.join(out, 'sitemap.xml'), 'w', encoding='utf-8').write(
@@ -277,3 +280,50 @@ document.getElementById('next').value=new URL('bedankt/index.html',location.href
   <div class="actions"><a class="btn btn-primary" href="../../">Terug naar de homepage</a><a class="btn btn-secondary" href="../../blog/">Lees de blog</a></div>
 </div></section>
 ''', nav='')
+
+
+KENNIS = [
+    ('Cultuur', 'Hoge werkdruk, onregelmatige diensten en een sterk verantwoordelijkheidsgevoel. We weten dat een storing tijdens de dienstwisseling iets anders betekent dan op een kantoor.'),
+    ('Uitdagingen', 'Personeelstekort, administratielast, NEN 7510 en AVG, de Wzd, agressie op de werkvloer en de vraag hoe je digitaliseert zonder de zorg te belasten.'),
+    ('Oplossingen', 'Domotica, zorgalarmering, leefcirkels, lokalisatie, medische apparatuur en IoT. We weten wat ze van het netwerk vragen en hoe ze samenwerken.'),
+    ('Applicaties', 'ECD’s, Zenya, AFAS, TOPdesk, Ultimo en domotica-koppelingen. We kennen de systemen waarmee uw medewerkers dagelijks werken.'),
+    ('Communicatie', 'Begrijpelijke taal, geen jargon, korte lijnen en duidelijke afspraken. We passen ons aan het ritme van zorgteams aan, niet andersom.'),
+]
+SECTOREN = ['Verpleging, verzorging &amp; thuiszorg', 'Gehandicaptenzorg', 'GGZ', 'Ziekenhuizen']
+
+
+def zorgkennis(r, compact=False):
+    items = ''.join(f'<div><h3>{h}</h3><p>{t}</p></div>' for h, t in KENNIS)
+    sect = ''.join(f'<span class="badge">{s}</span>' for s in SECTOREN)
+    if compact:
+        return (f'<section class="section deep zorgkennis"><div class="container">'
+                f'<div class="section-head"><span class="kicker" style="color:var(--merk-oranje)">Wij kennen de zorg</span><h2>We spreken de taal van de zorg</h2>'
+                f'<p class="lead">Techniek is ons vak, de zorg is onze context. Dat merkt u aan hoe we prioriteren, communiceren en samenwerken.</p></div>'
+                f'<div class="uniek kennis-5">{items}</div><p class="small" style="margin-top:32px"><a href="{r}zorg/#zorgkennis" style="color:#fff">Meer over onze zorgkennis</a></p></div></section>')
+    return (f'<section class="section zorgkennis-full" id="zorgkennis"><div class="container">'
+            f'<div class="section-head"><span class="kicker">Wij kennen de zorg</span><h2>We spreken de taal van de zorg</h2>'
+            f'<div class="lijn accent"><p class="lead">Techniek is ons vak, de zorg is onze context. Ons team combineert ICT-expertise met jarenlange ervaring in en met zorgorganisaties: van interim hoofd ICT en programmamanager in de zorg tot collega’s die zelf in de ouderenzorg hebben gewerkt.</p></div></div>'
+            f'<div class="uniek kennis-5">{items}</div>'
+            f'<div class="sectoren"><span class="small muted">Wij werken voor</span>{sect}</div>'
+            f'</div></section>')
+
+
+EVRESYS_URL = 'https://evresys.com/gezondheidszorg/'
+EVRESYS_LEEF = 'https://evresys.com/gezondheidszorg/leefcirkels/'
+BLYOTT_URL = 'https://www.blyott.com/'
+BLYOTT_AT = 'https://www.blyott.com/asset-tracking'
+
+
+def tech_partners(r):
+    return f'''<section class="section"><div class="container">
+  <div class="section-head"><span class="kicker">Onze technologiepartners</span><h2>Evresys en Blyott, geleverd en geïntegreerd door SilverCloud</h2>
+  <p class="lead">Wij kiezen voor bewezen platforms en zorgen dat ze werken in uw zorgomgeving. Wilt u meer weten over de technologie zelf? Kijk dan ook op de sites van onze partners.</p></div>
+  <div class="grid-2">
+    <div class="card"><img class="partner-logo" src="{r}assets/img/partners/evresys.png" alt="Evresys"><h3>Evresys</h3><p>Nederlands platform voor zorgalarmering, realtime lokalisatie, leefcirkels en dwaaldetectie, deurintegratie, medewerkersveiligheid en Push-to-Talk. Inzetbaar als totaaloplossing of als aanvulling op een bestaand zorgoproepsysteem.</p>
+      <p><strong>SilverCloud doet:</strong> advies, netwerk en dekking, wearables, koppelingen met zorgoproep en deuren, training en beheer.</p>
+      <a class="btn-link" href="{EVRESYS_URL}" rel="noopener" target="_blank">Meer over Evresys op evresys.com</a><a class="btn-link" href="{EVRESYS_LEEF}" rel="noopener" target="_blank">Leefcirkels bij Evresys</a></div>
+    <div class="card"><img class="partner-logo" src="{r}assets/img/partners/blyott.png" alt="Blyott"><h3>Blyott</h3><p>Realtime lokalisatie van medische hulpmiddelen via Bluetooth Low Energy, met inzicht in gebruik, onderhoud en voorraad. Partner van SilverCloud sinds 2020.</p>
+      <p><strong>SilverCloud doet:</strong> AssetGuard-dienstverlening, tags en netwerk, koppelingen met TOPdesk en assetmanagement, adoptie en beheer.</p>
+      <a class="btn-link" href="{BLYOTT_AT}" rel="noopener" target="_blank">Meer over Blyott op blyott.com</a></div>
+  </div>
+</div></section>'''
