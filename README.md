@@ -1,4 +1,4 @@
-# SilverCloud website (concept v0.2)
+# SilverCloud website (concept v0.3)
 
 Statische website (HTML en CSS, geen build-stap nodig) op basis van het huisstijlvoorstel *SilverCloud huisstijl* en het document *SilverCloud_Zorg_Websiteconcept_compleet.docx*.
 
@@ -46,6 +46,23 @@ Volgende wijzigingen: opnieuw `deploy.bat`, eventueel met een omschrijving: `dep
 - **AVG:** de lettertypes komen nu van Google Fonts. Host ze vóór livegang zelf in `public/assets/fonts/`.
 - Toestemming van Argos en ZGEM voor het gebruik van hun namen en citaten op de site (de citaten komen uit de eigen klantcase en blog).
 - Het label "Concept v0.2" rechtsonder: verwijderen in `site.css`/HTML bij livegang.
+
+## Wijzigingen in v0.3
+
+- **Netwerkregie leidend** voor de zorg: uitgelicht op home en Zorg-overzicht, uitgebreide Netwerkregie-pagina (paradigmaverschuiving, vijf uitgangspunten, architectuur, security by design, bouwblokken per locatietype, transparantie, overstap in twee fases, FAQ). Bron: de Netwerkregie-documenten en -presentaties.
+- **Uniciteit en zorgspecifieke eisen** als eigen blokken (open calculatie, gedeelde monitoring, beheer per locatie, segmentatie, 4G/5G-back-up, UPS, NEN 7510).
+- **Lokalisatie & Leefcirkels**: SilverCloud als volledige integrator van **Evresys en Blyott**; twee routes met drie Evresys-whitepapers als download.
+- **Computing**: herschreven als moderne, ontzorgende MSP (werkplek, veilig netwerk, toegang tot bedrijfsapplicaties, beveiliging & back-up, servicedesk).
+- **Blog**: alle 84 artikelen van silvercloudzorgiot.nl, met filter en zoekfunctie (`/blog/`). Oude adressen (`/<blogslug>/`, `/nieuws-blog/`, `/assetguard/` …) sturen door.
+- **Partners**-pagina, uitgebreide **cases**, video's, team op Over ons.
+- **Certificering** (NEN 7510, ISO 27001, ISO 9001) prominent op home, Zorg, Netwerkregie, Computing en in de footer.
+- **Afspraak plannen** (`/afspraak/`): naam, e-mail, datum en tijd; verzonden naar **sales@silvercloud.nl** via FormSubmit. Ook het contactformulier gaat nu naar sales@.
+
+### Eenmalig na livegang
+1. **Formulieren activeren:** de eerste inzending stuurt een activatiemail van FormSubmit naar sales@silvercloud.nl. Klik op de link; daarna komen alle aanvragen direct binnen. (FormSubmit verwerkt de formulierdata; neem dit op in de privacyverklaring of vervang later door eigen mail/CRM-koppeling.)
+2. **Afbeeldingen lokaal maken:** blogfoto's en certificaat-pdf's verwijzen nog naar silvercloudzorgiot.nl. Draai `python3 tools/download-assets.py` en commit het resultaat voordat de oude site uit gaat.
+
+Bouwen: `python3 tools/build.py` (gebruikt `tools/extra.py` en `tools/posts.json`).
 
 ## Wijzigingen in v0.2
 
