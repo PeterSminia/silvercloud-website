@@ -40,7 +40,7 @@ def page(path, title, desc, body, label='', nav='', sub=None):
     menu = ''.join(f'<li><a href="{r}{h}"{" aria-current=\"page\"" if k == nav else ""}>{t}</a></li>' for h, t, k in items)
     subnav = ''
     if sub:
-        subs = [('zorg/', 'Overzicht', 'zorg'), ('zorg/netwerkregie/', 'Netwerkregie', 'netwerkregie'), ('zorg/caredesk/', 'CareDesk', 'caredesk'), ('zorg/lokalisatie-leefcirkels/', 'Lokalisatie & Leefcirkels', 'lokalisatie'), ('zorg/assetguard/', 'Hulpmiddelenbeheer', 'assetguard')]
+        subs = [('zorg/', 'Overzicht', 'zorg'), ('zorg/netwerkregie/', 'Netwerkregie', 'netwerkregie'), ('zorg/caredesk/', 'CareDesk', 'caredesk'), ('zorg/lokalisatie-leefcirkels/', 'Lokalisatie & Leefcirkels', 'lokalisatie'), ('zorg/medewerkersveiligheid/', 'Medewerkersveiligheid', 'veiligheid'), ('zorg/assetguard/', 'Hulpmiddelenbeheer', 'assetguard')]
         subnav = '<nav class="sub-nav" aria-label="SilverCloud Zorg"><div class="container"><ul>' + ''.join(f'<li><a href="{r}{h}"{" aria-current=\"page\"" if k == sub else ""}>{t}</a></li>' for h, t, k in subs) + '</ul></div></nav>'
     html = f'''<!doctype html>
 <html lang="nl">
@@ -74,7 +74,7 @@ def page(path, title, desc, body, label='', nav='', sub=None):
         <div class="footer-certs"><a href="{extra.CERT_URLS[0][2]}">NEN 7510</a><a href="{extra.CERT_URLS[1][2]}">ISO 27001</a><a href="{extra.CERT_URLS[2][2]}">ISO 9001</a></div>
       </div>
       <div><h4>Computing</h4><ul><li><a href="{r}computing/#werkplek">Moderne werkplek</a></li><li><a href="{r}computing/#netwerken">Veilig netwerk</a></li><li><a href="{r}computing/#applicaties">Toegang tot applicaties</a></li><li><a href="{r}computing/#helpdesk">Servicedesk</a></li></ul></div>
-      <div><h4>Zorg</h4><ul><li><a href="{r}zorg/netwerkregie/">Netwerkregie</a></li><li><a href="{r}zorg/caredesk/">CareDesk</a></li><li><a href="{r}zorg/lokalisatie-leefcirkels/">Lokalisatie &amp; Leefcirkels</a></li><li><a href="{r}zorg/assetguard/">Hulpmiddelenbeheer (AssetGuard)</a></li></ul></div>
+      <div><h4>Zorg</h4><ul><li><a href="{r}zorg/netwerkregie/">Netwerkregie</a></li><li><a href="{r}zorg/caredesk/">CareDesk</a></li><li><a href="{r}zorg/lokalisatie-leefcirkels/">Lokalisatie &amp; Leefcirkels</a></li><li><a href="{r}zorg/medewerkersveiligheid/">Medewerkersveiligheid</a></li><li><a href="{r}zorg/assetguard/">Hulpmiddelenbeheer (AssetGuard)</a></li></ul></div>
       <div><h4>SilverCloud</h4><ul><li><a href="{r}over-ons/">Over ons &amp; werkwijze</a></li><li><a href="{r}kennis/">Kennis &amp; cases</a></li><li><a href="{r}blog/">Blog</a></li><li><a href="{r}partners/">Partners</a></li><li><a href="{r}afspraak/">Plan een afspraak</a></li><li><a href="{r}contact/">Contact</a></li><li><a href="https://www.silvercloudzorgiot.nl/privacybeleid/">Privacyverklaring</a></li></ul></div>
     </div>
     <div class="footer-bottom"><span>© 2026 SilverCloud</span><span>Ohmstraat 18-A, 3861 NB Nijkerk · <a href="tel:+31882560050">088 256 00 50</a> · <a href="mailto:info@silvercloud.nl">info@silvercloud.nl</a> · KvK [invullen]</span></div>
@@ -204,6 +204,8 @@ def art(kind):
         b = '<circle cx="160" cy="110" r="46" fill="none" stroke="#007a74" stroke-width="14"/><circle cx="160" cy="102" r="10" fill="#00aba3"/><path d="M142 128 a18 16 0 0 1 36 0" fill="#00aba3"/><g fill="#fff" stroke="#dce3ea"><rect x="40" y="96" width="56" height="24" rx="12"/><rect x="224" y="96" width="56" height="24" rx="12"/></g>'
     elif kind == 'asset':
         b = '<g stroke="#0f1b2d" stroke-width="2.5" fill="#fff"><rect x="96" y="70" width="128" height="80" rx="10"/></g><rect x="110" y="84" width="60" height="10" rx="5" fill="#e3f4f2"/><rect x="110" y="102" width="40" height="10" rx="5" fill="#e3f4f2"/><path d="M196 92 a14 14 0 1 1 -0.1 0" fill="none" stroke="#007a74" stroke-width="4"/><path d="M206 116 l12 12" stroke="#007a74" stroke-width="5" stroke-linecap="round"/><rect x="110" y="122" width="22" height="16" rx="4" fill="#ed6a3c"/><circle cx="60" cy="128" r="9" fill="#00aba3"/><circle cx="262" cy="104" r="9" fill="#00aba3"/>'
+    elif kind == 'safe':
+        b = '<circle cx="160" cy="112" r="58" fill="none" stroke="#ed6a3c" stroke-width="2" stroke-dasharray="4 6"/><circle cx="160" cy="112" r="38" fill="none" stroke="#ed6a3c" stroke-width="2"/><circle cx="160" cy="100" r="11" fill="#0f1b2d"/><path d="M140 136 a20 18 0 0 1 40 0" fill="#0f1b2d"/><rect x="172" y="114" width="16" height="22" rx="4" fill="#ed6a3c"/><circle cx="180" cy="121" r="3" fill="#fff"/><circle cx="70" cy="128" r="9" fill="#007a74"/><circle cx="250" cy="96" r="9" fill="#007a74"/><path d="M79 126 L124 116 M241 98 L196 106" stroke="#007a74" stroke-width="2" stroke-dasharray="3 5"/>'
     else:
         b = '<ellipse cx="160" cy="116" rx="96" ry="48" fill="#00aba3" fill-opacity=".18" stroke="#007a74" stroke-width="2" stroke-dasharray="6 6"/><circle cx="170" cy="116" r="10" fill="#00aba3"/><rect x="226" y="126" width="18" height="18" rx="4" fill="#ed6a3c"/><circle cx="96" cy="100" r="9" fill="#4697d2"/>'
     return base + wl + b + '</svg>'
@@ -238,7 +240,7 @@ page('', 'SilverCloud – Betrouwbare IT voor het mkb en de zorg',
       <span class="kicker">SilverCloud Zorg</span>
       <h3 style="font-size:28px">Technologie die werkt voor de zorg</h3>
       <p class="muted">Wij verbinden infrastructuur, ondersteuning en zorgtechnologie, zodat er meer ruimte is voor zorg.</p>
-      <ul><li><strong>Netwerkregie: het fundament</strong></li><li>CareDesk: de servicedesk voor de zorg</li><li>Lokalisatie &amp; Leefcirkels</li><li>Hulpmiddelenbeheer met AssetGuard</li></ul>
+      <ul><li><strong>Netwerkregie: het fundament</strong></li><li>CareDesk: de servicedesk voor de zorg</li><li>Lokalisatie &amp; Leefcirkels</li><li>Medewerkersveiligheid</li><li>Hulpmiddelenbeheer met AssetGuard</li></ul>
       <span class="go">Naar Zorg →</span>
     </a>
   </div>
@@ -394,12 +396,13 @@ page('zorg', 'SilverCloud Zorg – Technologie die werkt voor de zorg',
 
 <section class="section" id="oplossingen"><div class="container">
   <div class="section-head"><span class="kicker">Onze oplossingen</span><h2>Van digitale basis tot ondersteuning op de werkvloer</h2>
-  <p class="lead">Netwerkregie is het fundament. Daarop bouwen CareDesk, Lokalisatie &amp; Leefcirkels en hulpmiddelenbeheer, met dezelfde regie en dezelfde aanpak.</p></div>
+  <p class="lead">Netwerkregie is het fundament. Daarop bouwen CareDesk en onze zorgtechnologie: Lokalisatie &amp; Leefcirkels, Medewerkersveiligheid en hulpmiddelenbeheer, met dezelfde regie en dezelfde aanpak.</p></div>
   <a class="prop-card" href="netwerkregie/" style="margin-bottom:32px;flex-direction:row;flex-wrap:wrap"><div class="art" style="flex:1 1 360px">{art('net')}</div><div class="body" style="flex:1 1 360px"><span class="num">01 · NETWERKREGIE · HET FUNDAMENT</span><h3 style="font-size:28px">Een netwerk waarop de zorg kan vertrouwen</h3><p class="muted" style="margin:0">Architectuur, security by design, 24/7 monitoring en lifecyclemanagement, met open calculatie en gedeelde dashboards voor uw eigen ICT-afdeling.</p><span class="tags">Architectuur · Security · Monitoring · Lifecycle</span><span class="btn-link">Meer over Netwerkregie</span></div></a>
-  <div class="grid-3">
+  <div class="grid-2">
     <a class="prop-card" href="caredesk/"><div class="art">{art('care')}</div><div class="body"><span class="num">02 · CAREDESK</span><h3>Een servicedesk die de taal van de zorg spreekt</h3><span class="tags">Support · Applicatiekennis · Eén loket · Ketenregie</span><span class="btn-link">Meer over CareDesk</span></div></a>
     <a class="prop-card" href="lokalisatie-leefcirkels/"><div class="art">{art('lok')}</div><div class="body"><span class="num">03 · LOKALISATIE &amp; LEEFCIRKELS</span><h3>Weten waar het ertoe doet</h3><span class="tags">Blyott en Evresys · SilverCloud als integrator</span><span class="btn-link">Meer over Lokalisatie</span></div></a>
-    <a class="prop-card" href="assetguard/"><div class="art">{art('asset')}</div><div class="body"><span class="num">04 · HULPMIDDELENBEHEER</span><h3>Elk hulpmiddel binnen seconden gevonden</h3><span class="tags">AssetGuard · Snelvinden · TOPdesk · Inzicht</span><span class="btn-link">Meer over AssetGuard</span></div></a>
+    <a class="prop-card" href="medewerkersveiligheid/"><div class="art">{art('safe')}</div><div class="body"><span class="num">04 · MEDEWERKERSVEILIGHEID</span><h3>Nooit alleen bij een escalatie</h3><span class="tags">Persoonsalarm · Stille alarmering · Locatie · Push-to-Talk</span><span class="btn-link">Meer over Medewerkersveiligheid</span></div></a>
+    <a class="prop-card" href="assetguard/"><div class="art">{art('asset')}</div><div class="body"><span class="num">05 · HULPMIDDELENBEHEER</span><h3>Elk hulpmiddel binnen seconden gevonden</h3><span class="tags">AssetGuard · Snelvinden · TOPdesk · Inzicht</span><span class="btn-link">Meer over AssetGuard</span></div></a>
   </div>
 </div></section>
 
@@ -573,61 +576,92 @@ page('zorg/netwerkregie', 'Netwerkregie voor de zorg – SilverCloud Zorg',
 ''', label='zorg', nav='zorg', sub='netwerkregie')
 
 # ---------- CAREDESK ----------
+# Bronnen: Voorzet Pagina CareDesk, Brochure CareDesk, CareDesk blueprint, Verkorte uitleg CareDesk, html-tekst voor website.
+r = '../../'
 page('zorg/caredesk', 'CareDesk – de servicedesk voor de zorg – SilverCloud Zorg',
- 'CareDesk is meer dan een helpdesk: één loket, kennis van zorgapplicaties en regie richting leveranciers.', f'''
+ 'CareDesk is meer dan een helpdesk: een complete serviceorganisatie voor zorg-ICT, met kennis van ECD’s, Zenya en AFAS, één aanspreekpunt en regie richting al uw leveranciers.', f'''
 <section class="hero"><div class="container hero-grid">
   <div>
     <span class="badge">CareDesk</span>
-    <h1 class="display">Een servicedesk die begrijpt waarom uw vraag nú belangrijk is</h1>
-    <p class="lead">CareDesk is de servicedesk die de taal van de zorg spreekt. Met kennis van zorgapplicaties, één loket voor uw medewerkers en regie richting al uw ICT-leveranciers.</p>
-    <div class="actions"><a class="btn btn-primary" href="{r}contact/">Plan een kennismaking</a><a class="btn btn-link" href="#modellen">Bekijk de inzetmodellen</a></div>
+    <h1 class="display">Een servicedesk die de taal van de zorg spreekt</h1>
+    <p class="lead">CareDesk is meer dan een helpdesk. Het is een complete serviceorganisatie voor zorg-ICT: ondersteuning, beheer, regie, advies en procesverbetering in één dienst. Wij kennen de cultuur van de zorg en de applicaties waarmee uw medewerkers werken.</p>
+    <div class="actions"><a class="btn btn-primary" href="{r}afspraak/">Plan een kennismaking</a><a class="btn btn-secondary" href="{r}assets/downloads/brochure-caredesk.pdf" download>Download de brochure</a></div>
   </div>
   <div class="hero-visual">{CAREDESK_RING}</div>
 </div></section>
 
 <section class="section mist"><div class="container">
   <div class="section-head"><span class="kicker">Meer dan een helpdesk</span><h2>Het traditionele helpdeskmodel past niet meer bij de zorg</h2>
-  <div class="lijn accent"><p class="lead">Veel budget gaat naar generieke vragen over wachtwoorden en printers. De echte waarde zit in kennis van het ECD, koppelingen en werkprocessen.</p></div></div>
+  <div class="lijn accent"><p class="lead">Veel budget gaat naar generieke vragen over wachtwoorden, printers en hardware. De echte waarde zit in kennis van het ECD, koppelingen en werkprocessen. Als die niet goed werken, raakt dat direct de kwaliteit van zorg.</p></div></div>
   <div class="table-wrap"><table>
     <thead><tr><th></th><th>Traditionele helpdesk</th><th>CareDesk van SilverCloud</th></tr></thead>
     <tbody>
-      <tr><td>Kennisniveau</td><td>Basis IT-kennis</td><td class="us">Zorg- en ECD-expertise</td></tr>
+      <tr><td>Kennisniveau</td><td>Basis IT-kennis</td><td class="us">Diepgaande zorg- en ECD-expertise</td></tr>
       <tr><td>Aanpak</td><td>Reactief (break/fix)</td><td class="us">Proactief en adviserend</td></tr>
-      <tr><td>Aanspreekpunt</td><td>IT-afdeling als doorgeefluik</td><td class="us">Eén loket met ketenregie</td></tr>
+      <tr><td>Budgetfocus</td><td>Duur talent op generieke vragen</td><td class="us">Gerichte investering in zorgprocessen</td></tr>
+      <tr><td>Aanspreekpunt</td><td>IT-afdeling als doorgeefluik</td><td class="us">Ketenregie, één aanspreekpunt</td></tr>
       <tr><td>Cultuur</td><td>Techniekgedreven</td><td class="us">Zorgbewust en dienstverlenend</td></tr>
     </tbody></table></div>
 </div></section>
 
-<section class="section"><div class="container">
+<section class="section"><div class="container grid-2" style="align-items:start">
+  <div><span class="kicker">Zorgcultuur</span><h2>Wij kennen de cultuur van de zorg</h2>
+  <p class="lead" style="margin-top:16px">Hoge werkdruk, onregelmatige diensten en een sterk verantwoordelijkheidsgevoel. De manier waarop je communiceert, prioriteert en ondersteunt, moet daarbij passen.</p></div>
+  <div class="lijn accent" style="margin-top:0"><p>Onze medewerkers zijn gewend om samen te werken met teams in de VVT, gehandicaptenzorg, GGZ en ziekenhuizen. We werken met begrijpelijke taal, korte lijnen, duidelijke afspraken en respect voor de dynamiek van zorgteams.</p>
+  <p>We kennen veelgebruikte zorgapplicaties, zoals diverse ECD’s, Zenya en AFAS. Daardoor zien we sneller wat er speelt en helpen we zorgprofessionals niet alleen met “hoe los ik dit op?”, maar ook met “hoe kan ik hier slimmer mee werken?”.</p></div>
+</div></section>
+
+<section class="section mist"><div class="container">
   <div class="section-head"><span class="kicker">Wat CareDesk onderscheidt</span><h2>Zorgkennis en regie in één dienst</h2></div>
   <div class="grid-2">
-    <div class="card flat">{icon('bel')}<h3>Urgentie begrijpen</h3><p>Een storing is niet alleen een ticket. Het kan het primaire proces raken, en zo handelen we ook.</p></div>
-    <div class="card flat">{icon('werkplek')}<h3>Kennis van zorgapplicaties</h3><p>Thuis in veelgebruikte toepassingen zoals diverse ECD’s, Zenya en AFAS.</p></div>
-    <div class="card flat">{icon('schild')}<h3>Proactief</h3><p>We voorkomen dat problemen terugkeren en verbeteren het gebruik van systemen.</p></div>
-    <div class="card flat">{icon('netwerk')}<h3>Ketenregie</h3><p>Eén loket voor medewerkers en actieve coördinatie met andere ICT-leveranciers.</p></div>
+    <div class="card flat">{icon('helpdesk')}<h3>Eén aanspreekpunt (SPOC)</h3><p>Eén loket en één telefoonnummer voor al uw zorg-ICT-vragen. Wij bewaken opvolging en doorlooptijden en stemmen af met leveranciers van werkplekken, ECD’s, koppelingen en andere applicaties.</p></div>
+    <div class="card flat">{icon('pad')}<h3>Van reactief naar proactief</h3><p>We sturen op het voorkomen van problemen en op procesverbetering, met continue monitoring en heldere servicelevels, KPI’s en rapportages.</p></div>
+    <div class="card flat">{icon('werkplek')}<h3>Applicatie-expertise</h3><p>Diepgaande kennis van ECD’s, Zenya, AFAS en andere zorgapplicaties, zodat vragen in één keer goed worden opgepakt.</p></div>
+    <div class="card flat">{icon('bel')}<h3>Urgentie begrijpen</h3><p>Een storing is geen ticket: hij kan het primaire proces raken. We prioriteren op impact voor cliënt en zorgmedewerker. Ook ’s avonds en in het weekend, als u dat wilt.</p></div>
   </div>
 </div></section>
 
-<section class="section mist" id="modellen"><div class="container">
-  <div class="section-head"><span class="kicker">Drie inzetmodellen</span><h2>CareDesk zoals het bij uw organisatie past</h2></div>
+<section class="section" id="modellen"><div class="container">
+  <div class="section-head"><span class="kicker">Inzetmodellen</span><h2>Overnemen, versterken of optimaliseren</h2><p class="lead">Iedere zorgorganisatie heeft een andere uitgangssituatie. CareDesk sluit op alle drie aan.</p></div>
   <div class="grid-3">
-    <div class="route voorkeur"><span class="badge">Onze voorkeur</span><h3>Complete overname</h3><p class="muted">Eén volwaardige serviceorganisatie en één aanspreekpunt voor alle zorg-ICT-vragen.</p></div>
-    <div class="route"><span class="badge">Versterking</span><h3>Uw team versterken</h3><p class="muted">Extra capaciteit, specialistische applicatiekennis en ruimere beschikbaarheid naast uw eigen team.</p></div>
-    <div class="route"><span class="badge">Optimalisatie</span><h3>Processen verbeteren</h3><p class="muted">Incident-, change-, escalatie- en rapportageprocessen professionaliseren.</p></div>
+    <div class="route voorkeur"><span class="badge">Onze voorkeur</span><h3>Complete overname</h3><p class="muted">Een volwaardige serviceorganisatie die 1e- en 2e-lijns support, applicatie-expertise, monitoring, incident- en probleemmanagement, procesoptimalisatie en heldere servicelevels combineert. De meeste rust en de sterkste positie als SPOC.</p>
+      <ul class="checklist"><li>U stopt met het zelf managen van een servicedesk</li><li>Eén aanspreekpunt voor de hele ICT-keten</li><li>Waar gewenst fysiek aanwezig op locatie</li><li>Uw ICT-afdeling verschuift van uitvoering naar regie</li></ul></div>
+    <div class="route"><span class="badge">Versterking</span><h3>Uw servicedesk versterken</h3><p class="muted">CareDesk als uitbreiding of verdieping van uw eigen team, met naadloze aansluiting op uw processen.</p>
+      <ul class="checklist"><li>Extra capaciteit bij piekbelasting</li><li>Specialistische kennis van zorgapplicaties</li><li>Avond-, weekend- en verlengde bereikbaarheid</li><li>Tijdelijke ondersteuning bij projecten</li></ul></div>
+    <div class="route"><span class="badge">Optimalisatie</span><h3>Processen verbeteren</h3><p class="muted">Veel helpdesks zijn historisch gegroeid. Wij maken ze robuuster, transparanter en beter stuurbaar.</p>
+      <ul class="checklist"><li>Incident- en changeprocessen</li><li>Werkafspraken, routering en escalaties</li><li>Rapportages, KPI’s en stuurinformatie</li><li>Servicelevels en doorlooptijden</li></ul></div>
   </div>
+</div></section>
+
+<section class="section deep"><div class="container">
+  <div class="section-head"><span class="kicker" style="color:var(--merk-oranje)">De overgang</span><h2>Projectmatig, zonder verstoring van de zorg</h2><p class="lead">Overname of uitbreiding van een servicedesk doen we altijd gestructureerd, voor een soepele transitie.</p></div>
+  {steps([('Audit &amp; inventarisatie', 'Processen, applicaties en meldingen gedetailleerd in kaart.'), ('Kennisoverdracht', 'Diepgaande afstemming op uw zorgcontext en teams.'), ('SLA &amp; kaders', 'Afspraken over servicetijden, escalaties en fysieke aanwezigheid.'), ('Go-live', 'Een stabiele, voorspelbare en naadloze dienstverlening.')])}
 </div></section>
 
 <section class="section"><div class="container">
-  <div class="section-head"><span class="kicker">Zorgvuldige overgang</span><h2>In vier stappen naar CareDesk</h2><p class="lead">Overname of uitbreiding gebeurt altijd projectmatig, zodat het zorgproces niet wordt verstoord.</p></div>
-  <div class="steps" style="grid-template-columns:repeat(4,1fr)">
-    <div class="step"><h3>Audit &amp; inventarisatie</h3><p>Huidige situatie, applicaties en afspraken in kaart.</p></div>
-    <div class="step"><h3>Kennisoverdracht</h3><p>Kennis vastleggen en overdragen aan het CareDesk-team.</p></div>
-    <div class="step"><h3>SLA &amp; kaders</h3><p>Servicelevels, routering en escalatie afspreken.</p></div>
-    <div class="step"><h3>Go-live</h3><p>Gecontroleerd live, met nazorg en rapportage.</p></div>
+  <div class="section-head"><span class="kicker">Wat het oplevert</span><h2>Meer focus op zorg, minder op techniek</h2></div>
+  <div class="grid-4">
+    <div class="card flat">{icon('klok')}<h3>Tijdwinst</h3><p>Minder tijdverlies door ICT-problemen voor zorgprofessionals.</p></div>
+    <div class="card flat">{icon('mens')}<h3>Kwaliteit</h3><p>Hogere gebruikerstevredenheid en betere prestaties van applicaties.</p></div>
+    <div class="card flat">{icon('pad')}<h3>Efficiëntie</h3><p>Lagere totale kosten door een efficiëntere werkwijze.</p></div>
+    <div class="card flat">{icon('oog')}<h3>Ruimte</h3><p>Meer rust en focus op zorginhoud en innovatie.</p></div>
   </div>
+  <p class="small muted" style="margin-top:32px">CareDesk werkt naadloos samen met <a href="{r}zorg/netwerkregie/">Netwerkregie</a>: één partij voor netwerk én service, met dezelfde monitoring en dezelfde regie.</p>
 </div></section>
 
-{cta('Een servicedesk die meedenkt met de zorg?', 'We vertellen u graag hoe CareDesk in uw organisatie kan werken.', 'Plan een kennismaking', r + 'contact/', r)}
+<section class="section mist"><div class="container grid-2" style="align-items:center">
+  <div><span class="kicker">Brochure</span><h2>Alles over CareDesk op een rij</h2><p class="lead" style="margin-top:16px">De inzetmodellen, de overgang en wat CareDesk oplevert, in één document.</p></div>
+  <a class="card download wp" href="{r}assets/downloads/brochure-caredesk.pdf" download><span class="kicker">Brochure · pdf</span><h3>CareDesk: dé servicedesk voor zorgorganisaties</h3><p>Meer dan een helpdesk: ondersteuning, beheer, regie, advies en procesoptimalisatie in één dienst.</p><span class="btn btn-primary" style="align-self:flex-start">Download de brochure</span></a>
+</div></section>
+
+<section class="section"><div class="container">
+  <div class="section-head"><span class="kicker">Verdieping</span><h2>Lees verder</h2></div>
+  {latest(r, 3, slugs=['helpdesk-uitbesteden-de-eerste-stap-naar-strategische-it', 'vier-it-trends-die-de-zorg-transformeren-van-administratielast-naar-ai', 'wildgroei-aan-applicaties-zo-hou-je-overzicht-in-je-applicatielandschap'])}
+</div></section>
+
+{certs(r)}
+
+{cta('Ontdek wat CareDesk voor uw servicedesk kan betekenen', 'Laten we in gesprek gaan over ICT-ondersteuning die écht werkt voor uw zorgverleners.', 'Plan een kennismaking', r + 'afspraak/', r, 'Download de brochure', r + 'assets/downloads/brochure-caredesk.pdf')}
 ''', label='zorg', nav='zorg', sub='caredesk')
 
 # ---------- LOKALISATIE ----------
@@ -666,7 +700,7 @@ page('zorg/lokalisatie-leefcirkels', 'Lokalisatie & Leefcirkels – Blyott en Ev
   <div class="grid-4">
     <div class="card flat">{icon('cirkel')}<h3>Meer vrijheid voor cliënten</h3><p>Persoonlijke leefcirkels en dwaaldetectie per cliënt.</p></div>
     <div class="card flat">{icon('bel')}<h3>Sneller hulp op de juiste plek</h3><p>Bij elk alarm direct de locatie van cliënt of wearable.</p></div>
-    <div class="card flat">{icon('radio')}<h3>Veiliger werken</h3><p>Persoonsalarm en Push-to-Talk voor collegiale hulp bij escalaties.</p></div>
+    <div class="card flat">{icon('radio')}<h3>Medewerkersveiligheid</h3><p>Persoonsalarm en Push-to-Talk voor collegiale hulp bij escalaties. <a href="{r}zorg/medewerkersveiligheid/">Meer hierover</a></p></div>
     <div class="card flat">{icon('tillift')}<h3>Minder zoeken</h3><p>Tilliften, infuuspompen en andere hulpmiddelen binnen seconden gevonden.</p></div>
   </div>
 </div></section>
@@ -678,7 +712,7 @@ page('zorg/lokalisatie-leefcirkels', 'Lokalisatie & Leefcirkels – Blyott en Ev
     <div class="card flat">{icon('pin')}<h3>Realtime lokalisatie</h3><p>Bij iedere melding is de locatie van cliënt of wearable direct zichtbaar, binnen en buiten.</p></div>
     <div class="card flat">{icon('cirkel')}<h3>Leefcirkels &amp; dwaaldetectie</h3><p>Per cliënt de gewenste bewegingsvrijheid instellen. Verlaat iemand de zone, dan volgt automatisch een melding.</p></div>
     <div class="card flat">{icon('deur')}<h3>Deurintegratie</h3><p>Leefcirkels gekoppeld aan deuren en toegang, zodat vrijheid en veiligheid per cliënt samenkomen.</p></div>
-    <div class="card flat">{icon('radio')}<h3>Medewerkersveiligheid &amp; Push-to-Talk</h3><p>Persoonsalarm voor medewerkers en smartphones die werken als portofoon, per team, afdeling of verdieping.</p></div>
+    <div class="card flat">{icon('radio')}<h3>Medewerkersveiligheid &amp; Push-to-Talk</h3><p>Persoonsalarm voor medewerkers en smartphones die werken als portofoon, per team, afdeling of verdieping. <a href="{r}zorg/medewerkersveiligheid/">Lees meer</a></p></div>
     <div class="card flat">{icon('kaart')}<h3>Hulpmiddelen &amp; assettracking</h3><p>Hulpmiddelen vinden en het gebruik inzichtelijk maken, voortbouwend op onze jarenlange ervaring met <a href="{r}zorg/assetguard/">AssetGuard</a> en Blyott.</p></div>
   </div>
 </div></section>
@@ -710,6 +744,84 @@ page('zorg/lokalisatie-leefcirkels', 'Lokalisatie & Leefcirkels – Blyott en Ev
 
 {cta('Welke route past bij uw organisatie?', 'In een adviesgesprek brengen we samen in kaart wat er al is en wat nog ontbreekt.', 'Vraag een adviesgesprek aan', r + 'contact/', r)}
 ''', label='zorg', nav='zorg', sub='lokalisatie')
+
+# ---------- MEDEWERKERSVEILIGHEID ----------
+# Bronnen: Interakt-partnerdagpresentatie (toepassingen), Evresys-documenten (persoonsalarm, Push-to-Talk),
+# blogs 'Bescherming op de werkvloer', 'Van gevangenis naar de zorg' en 'RTLS voor medewerkersveiligheid'.
+r = '../../'
+page('zorg/medewerkersveiligheid', 'Medewerkersveiligheid – SilverCloud Zorg',
+ 'Persoonsalarm, stille alarmering, locatie bij een alarm en Push-to-Talk: technologie die zorgmedewerkers beschermt. Geleverd en geïntegreerd door SilverCloud Zorg.', f'''
+<section class="hero"><div class="container hero-grid">
+  <div>
+    <span class="badge">Medewerkersveiligheid</span>
+    <h1 class="display">Nooit alleen bij een escalatie</h1>
+    <p class="lead">Agressie tegen zorgmedewerkers neemt toe. Met persoonsalarm, stille alarmering, locatie bij een alarm en directe teamcommunicatie roepen medewerkers binnen seconden hulp in, overal in het gebouw. SilverCloud levert, integreert en beheert de oplossing.</p>
+    <div class="actions"><a class="btn btn-primary" href="{r}afspraak/">Plan een adviesgesprek</a><a class="btn btn-link" href="#oplossingen">Bekijk de mogelijkheden</a></div>
+  </div>
+  <div class="hero-visual" style="border-radius:18px;overflow:hidden">{art('safe')}</div>
+</div></section>
+
+<section class="section mist"><div class="container">
+  <div class="section-head"><span class="kicker">Waarom</span><h2>Veilig werken is de basis voor goede zorg</h2>
+  <div class="lijn accent"><p class="lead">In de gehandicaptenzorg, GGZ en ziekenhuizen is snelle hulp bij een escalatie geen luxe maar noodzaak. En ook in de ouderenzorg wil een medewerker in de nachtdienst weten dat er direct backup komt.</p></div></div>
+  <div class="grid-3">
+    <div class="card flat">{icon('mens')}<h3>Mensen</h3><p>Medewerkers die zich veilig voelen, blijven. Wie bij een escalatie snel hulp krijgt, gaat met een gerust hart naar huis.</p></div>
+    <div class="card flat">{icon('klok')}<h3>Tijd</h3><p>Bij een alarm telt elke seconde. Met locatie-informatie gaan collega’s direct naar de juiste plek, zonder zoeken.</p></div>
+    <div class="card flat">{icon('schild')}<h3>Aantoonbaar</h3><p>Aantoonbare maatregelen voor een veilige werkplek, met registratie van meldingen en opvolging.</p></div>
+  </div>
+</div></section>
+
+<section class="section" id="oplossingen"><div class="container">
+  <div class="section-head"><span class="kicker">Mogelijkheden</span><h2>Wat we voor uw medewerkers inrichten</h2></div>
+  <div class="grid-3">
+    <div class="card flat">{icon('bel')}<h3>Persoonsalarm</h3><p>Via een wearable, badge of zorgtelefoon met fysieke alarmknop. Geen ontgrendelen of app zoeken: één druk en de melding gaat uit.</p></div>
+    <div class="card flat">{icon('oog')}<h3>Stille alarmering</h3><p>Onopvallend hulp inroepen, bijvoorbeeld met een knop onder de tafel in een spreekkamer. Een zichtbaar alarm kan juist escaleren.</p></div>
+    <div class="card flat">{icon('pin')}<h3>Locatie bij elk alarm</h3><p>Collega’s zien direct waar hulp nodig is, overal in het gebouw en waar gewenst ook buiten.</p></div>
+    <div class="card flat">{icon('radio')}<h3>Push-to-Talk</h3><p>De smartphone als portofoon, per team, afdeling of verdieping. Direct collegiale hulp inroepen en afstemmen.</p></div>
+    <div class="card flat">{icon('netwerk')}<h3>Gebouwbrede dekking</h3><p>Dekking die niet ophoudt bij de kamer of de afdeling, op een netwerk dat er volgens <a href="{r}zorg/netwerkregie/">Netwerkregie</a> op is ontworpen.</p></div>
+    <div class="card flat">{icon('deur')}<h3>Koppeling met uw systemen</h3><p>Als aanvulling op uw bestaande zorgoproep- of domoticasysteem, of als onderdeel van één platform voor cliënten én medewerkers.</p></div>
+  </div>
+</div></section>
+
+<section class="section deep"><div class="container grid-2" style="align-items:start">
+  <div><span class="kicker" style="color:var(--merk-oranje)">Uit de praktijk</span><h2>Bewezen in de meest veeleisende omgevingen</h2>
+  <p class="lead" style="margin-top:16px">De technologie van onze partner Evresys is doorontwikkeld in het gevangeniswezen, waar medewerkers met noodknoppen en Push-to-Talk binnen seconden collega’s alarmeren. Die kennis is teruggebracht naar de zorg, met de menselijke maat die daar hoort.</p>
+  <div class="actions"><a class="btn btn-highlight" href="{r}blog/van-gevangenis-naar-de-zorg-praktische-lessen-over-medewerkersveiligheid/">Lees: van gevangenis naar de zorg</a></div></div>
+  <div class="uniek" style="grid-template-columns:1fr 1fr">
+    <div><h3>Gehandicaptenzorg</h3><p>Snel hulp bij fysiek sterke cliënten die hun impulsen niet altijd kunnen beheersen.</p></div>
+    <div><h3>GGZ</h3><p>Stille alarmknoppen in spreekkamers, zodat een gesprek niet onnodig escaleert.</p></div>
+    <div><h3>Ziekenhuizen</h3><p>Bescherming bij agressie van gefrustreerde patiënten of bezoekers.</p></div>
+    <div><h3>Ouderenzorg</h3><p>Zekerheid in de avond- en nachtdienst, als er weinig collega’s zijn.</p></div>
+  </div>
+</div></section>
+
+<section class="section"><div class="container grid-2" style="align-items:start">
+  <div><span class="kicker">Privacy &amp; draagvlak</span><h2>Over veiligheid, niet over controle</h2>
+  <p class="lead" style="margin-top:16px">Locatie van medewerkers is gevoelig. Met de juiste aanpak worden sceptici ambassadeurs.</p></div>
+  <ul class="checklist">
+    <li>Start met een pilot op de afdeling met de meeste incidenten</li>
+    <li>Betrek de ondernemingsraad vanaf dag één</li>
+    <li>Locatie wordt gebruikt bij een alarm, niet voor prestatiemeting</li>
+    <li>Duidelijke afspraken over wie welke gegevens mag zien</li>
+    <li>Ingericht volgens NEN 7510 en ISO 27001</li>
+  </ul>
+</div></section>
+
+<section class="section mist"><div class="container">
+  <div class="section-head"><span class="kicker">Volledige integrator</span><h2>Van advies tot beheer, één aanspreekpunt</h2>
+  <p class="lead">SilverCloud levert de oplossing van Evresys als volledige integrator: advies, netwerk en dekking, wearables en koppelingen, training van medewerkers en doorlopend beheer.</p></div>
+  {steps([('Kennismaken', 'Waar ontstaan incidenten, en wat is er al?'), ('Advies', 'De juiste combinatie van alarmering, locatie en communicatie.'), ('Implementatie', 'Dekking, apparatuur en koppelingen ingericht.'), ('Training', 'Medewerkers oefenen en weten wat te doen.'), ('Beheer', 'Monitoring, support en periodieke evaluatie.')])}
+</div></section>
+
+<section class="section"><div class="container">
+  <div class="section-head"><span class="kicker">Verdieping</span><h2>Meer over medewerkersveiligheid</h2><p><a class="btn-link" href="{r}blog/#veiligheid">Alle artikelen over veiligheid</a></p></div>
+  {latest(r, 3, slugs=['rtls-voor-medewerkersveiligheid-de-verborgen-game-changer', 'bescherming-op-de-werkvloer-medewerkersveiligheid-in-zorginstellingen', 'de-echte-kosten-van-onveiligheid-wat-kost-een-incident-jouw-zorginstelling'])}
+</div></section>
+
+{certs(r)}
+
+{cta('Hoe veilig werken uw medewerkers nu?', 'Plan een adviesgesprek. We kijken samen waar de risico’s zitten en welke oplossing past bij uw locaties.', 'Plan een adviesgesprek', r + 'afspraak/', r)}
+''', label='zorg', nav='zorg', sub='veiligheid')
 
 # ---------- HULPMIDDELENBEHEER (AssetGuard) ----------
 # Bron: Realtime localisatie - IoT/Website info (productbeschrijvingen Snelvinden, Insight,
@@ -845,6 +957,7 @@ page('kennis', 'Kennis & cases – SilverCloud',
   <div class="section-head"><span class="kicker">Downloads</span><h2>Whitepapers en factsheets</h2></div>
   <div class="grid-3">
     {wp_card(r)}
+    <a class="card download" href="{r}assets/downloads/brochure-caredesk.pdf" download>{icon('helpdesk')}<h3>Brochure CareDesk</h3><p>Dé servicedesk voor zorgorganisaties: overnemen, versterken of optimaliseren.</p><span class="btn-link">Download (pdf)</span></a>
     <a class="card download" href="{r}assets/downloads/whitepaper-evresys-twee-routes.pdf" download>{icon('cirkel')}<h3>Twee routes naar slimme zorgtechnologie</h3><p>Evresys als totaaloplossing of als aanvulling op een bestaand zorgoproepsysteem.</p><span class="btn-link">Download (pdf)</span></a>
     <a class="card download" href="{r}assets/downloads/whitepaper-evresys-totaaloplossing.pdf" download>{icon('bel')}<h3>Evresys als totaaloplossing</h3><p>Voor kleinere zorgorganisaties en nieuwe locaties zonder zorgoproepsysteem.</p><span class="btn-link">Download (pdf)</span></a>
     <a class="card download" href="{r}assets/downloads/whitepaper-evresys-aanvulling-zorgoproepsysteem.pdf" download>{icon('deur')}<h3>Evresys als aanvulling</h3><p>Lokalisatie en leefcirkels naast een bestaand zorgoproepsysteem.</p><span class="btn-link">Download (pdf)</span></a>

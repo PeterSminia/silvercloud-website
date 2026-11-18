@@ -218,7 +218,7 @@ var h=location.hash.slice(1);if(h){{var c=document.querySelector('.chip[data-cat
         _redirect(out, old, new)
 
     # sitemap
-    paths = ['', 'computing/', 'zorg/', 'zorg/netwerkregie/', 'zorg/caredesk/', 'zorg/lokalisatie-leefcirkels/', 'zorg/assetguard/',
+    paths = ['', 'computing/', 'zorg/', 'zorg/netwerkregie/', 'zorg/caredesk/', 'zorg/lokalisatie-leefcirkels/', 'zorg/medewerkersveiligheid/', 'zorg/assetguard/',
              'kennis/', 'blog/', 'partners/', 'over-ons/', 'contact/'] + [f'blog/{p["slug"]}/' for p in POSTS]
     base = 'https://petersminia.github.io/silvercloud-website/'
     open(os.path.join(out, 'sitemap.xml'), 'w', encoding='utf-8').write(
