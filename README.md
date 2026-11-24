@@ -1,4 +1,4 @@
-# SilverCloud website (concept v0.4)
+# SilverCloud website (v0.5)
 
 Statische website (HTML en CSS, geen build-stap nodig) op basis van het huisstijlvoorstel *SilverCloud huisstijl* en het document *SilverCloud_Zorg_Websiteconcept_compleet.docx*.
 
@@ -23,13 +23,20 @@ Stijl staat in `public/assets/css/site.css`. Logo's en afbeeldingen staan in `pu
 
 Open `public/index.html` in de browser. Alle links zijn relatief, dus dat werkt zonder server.
 
-## Publiceren op GitLab
+## Publiceren (GitHub Pages)
 
-1. Maak in GitLab een project aan, bijvoorbeeld `silvercloud/website`. Vink **‘Initialize repository with a README’ uit**, anders botst die README met deze.
-2. Dubbelklik `deploy.bat`. De eerste keer vraagt het script om de project-URL.
-3. GitLab Pages publiceert de map `public/` automatisch (`.gitlab-ci.yml`). De URL vindt u in GitLab onder **Deploy → Pages**.
+Elke wijziging op `main` wordt automatisch gepubliceerd via `.github/workflows/pages.yml` (build- en deploy-job). Tijdelijk adres: https://petersminia.github.io/silvercloud-website/
 
-Volgende wijzigingen: opnieuw `deploy.bat`, eventueel met een omschrijving: `deploy.bat "Teksten CareDesk aangepast"`.
+### Overstappen naar www.silvercloud.nl
+
+1. GitHub: **Settings → Pages → Custom domain**: `www.silvercloud.nl`, Save. (Een CNAME-bestand is niet nodig bij publiceren via een workflow.)
+2. DNS bij de domeinbeheerder:
+   - `www` CNAME → `petersminia.github.io`
+   - `@` A-records → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+   - Oude A/CNAME-records voor `@` en `www` verwijderen. MX-records (e-mail) niet aanraken.
+3. Na de DNS-wijziging: **Enforce HTTPS** aanvinken in Settings → Pages.
+
+Sitemap en `robots.txt` verwijzen al naar https://www.silvercloud.nl/.
 
 ## Bronscript
 
@@ -37,15 +44,22 @@ Volgende wijzigingen: opnieuw `deploy.bat`, eventueel met een omschrijving: `dep
 
 ## Nog in te vullen (gemarkeerd met [ ... ] op de site)
 
-- KvK-nummer (footer). Adres, telefoon en e-mail staan er sinds v0.2 in.
+- KvK-nummer (optioneel, footer). Het placeholder is weggehaald; toevoegen in `tools/build.py` (footer-bottom).
 - Teamintroductie en teamfoto (over ons).
 - Computing-subpagina's: het bronmateriaal in `1 MKB propositie` kon niet worden gelezen (OneDrive gaf een fout). De Computing-pagina is daarom nog gelijk aan v0.1.
 - Doelgroep/marktsegment voor Computing (FAQ op de Computing-pagina).
 - Koppeling van het contactformulier (bijv. naar e-mail, HubSpot of Autotask).
-- Privacyverklaring en algemene voorwaarden.
+- Algemene voorwaarden. (Privacyverklaring, cookiebeleid en toegankelijkheidsverklaring staan erop sinds v0.5.)
 - **AVG:** de lettertypes komen nu van Google Fonts. Host ze vóór livegang zelf in `public/assets/fonts/`.
 - Toestemming van Argos en ZGEM voor het gebruik van hun namen en citaten op de site (de citaten komen uit de eigen klantcase en blog).
-- Het label "Concept v0.2" rechtsonder: verwijderen in `site.css`/HTML bij livegang.
+
+## Wijzigingen in v0.5
+
+- Logo's Computing en Zorg op de homepage; overal het SilverCloud-logo in de header; ZorgIoT → SilverCloud Zorg.
+- Computing en Zorg/Netwerkregie herschreven na interne feedback (o.a. BrainOnline 375, SSO, Ekahau-wifimetingen, regie bij de klant, open calculatie alleen op netwerkhardware en verbindingen).
+- Privacyverklaring, cookiebeleid, toegankelijkheidsverklaring en pagina Kwaliteit & informatiebeveiliging (beleid en actuele certificaten in `assets/downloads/`).
+- Klikbare blokken in de Zorg-illustratie, nieuwe propositie-illustraties, vast submenu Zorg, explainervideo's op Hulpmiddelenbeheer.
+- Label "Concept" verwijderd; sitemap en robots.txt voor www.silvercloud.nl.
 
 ## Wijzigingen in v0.4
 

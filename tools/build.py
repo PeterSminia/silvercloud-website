@@ -82,10 +82,9 @@ def page(path, title, desc, body, label='', nav='', sub=None):
       <div><h4>Zorg</h4><ul><li><a href="{r}zorg/netwerkregie/">Netwerkregie</a></li><li><a href="{r}zorg/caredesk/">CareDesk</a></li><li><a href="{r}zorg/zorgtechnologie/">Zorgtechnologie</a></li><li><a href="{r}zorg/lokalisatie-leefcirkels/">Lokalisatie &amp; Leefcirkels</a></li><li><a href="{r}zorg/medewerkersveiligheid/">Medewerkersveiligheid</a></li><li><a href="{r}zorg/assetguard/">Hulpmiddelenbeheer (AssetGuard)</a></li></ul></div>
       <div><h4>SilverCloud</h4><ul><li><a href="{r}over-ons/">Over ons &amp; werkwijze</a></li><li><a href="{r}kennis/">Kennis &amp; cases</a></li><li><a href="{r}blog/">Blog</a></li><li><a href="{r}partners/">Partners</a></li><li><a href="{r}afspraak/">Plan een afspraak</a></li><li><a href="{r}contact/">Contact</a></li><li><a href="{r}kwaliteit-informatiebeveiliging/">Kwaliteit &amp; certificering</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><span>© 2026 SilverCloud</span><span>Ohmstraat 18-A, 3861 NB Nijkerk · <a href="tel:+31882560050">088 256 00 50</a> · <a href="mailto:info@silvercloud.nl">info@silvercloud.nl</a> · KvK [invullen]</span><span><a href="{r}privacyverklaring/">Privacyverklaring</a> · <a href="{r}cookiebeleid/">Cookiebeleid</a> · <a href="{r}toegankelijkheidsverklaring/">Toegankelijkheid</a></span></div>
+    <div class="footer-bottom"><span>© 2026 SilverCloud</span><span>Ohmstraat 18-A, 3861 NB Nijkerk · <a href="tel:+31882560050">088 256 00 50</a> · <a href="mailto:info@silvercloud.nl">info@silvercloud.nl</a></span><span><a href="{r}privacyverklaring/">Privacyverklaring</a> · <a href="{r}cookiebeleid/">Cookiebeleid</a> · <a href="{r}toegankelijkheidsverklaring/">Toegankelijkheid</a></span></div>
   </div>
 </footer>
-<span class="concept" title="Voorstel, nog niet definitief">Concept v0.4</span>
 <script>
   (function () {{
     var b = document.querySelector('.menu-toggle'), m = document.getElementById('menu');
