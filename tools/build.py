@@ -35,7 +35,7 @@ def page(path, title, desc, body, label='', nav='', sub=None):
     depth = path.count('/') + 1 if path else 0
     r = '../' * depth
     zorg = label == 'zorg'
-    logo = f'<img src="{r}assets/img/silvercloud-zorg-logo-donker.svg" alt="SilverCloud Zorg">' if zorg else f'<img src="{r}assets/img/silvercloud-logo-kleur.svg" alt="SilverCloud">'
+    logo = f'<img src="{r}assets/img/silvercloud-logo-kleur.svg" alt="SilverCloud">'
     items = [('', 'Home', 'home'), ('computing/', 'Computing', 'computing'), ('zorg/', 'Zorg', 'zorg'), ('kennis/', 'Kennis &amp; cases', 'kennis'), ('blog/', 'Blog', 'blog'), ('over-ons/', 'Over ons', 'over')]
     menu = ''.join(f'<li><a href="{r}{h}"{" aria-current=\"page\"" if k == nav else ""}>{t}</a></li>' for h, t, k in items)
     subnav = ''
@@ -61,7 +61,7 @@ def page(path, title, desc, body, label='', nav='', sub=None):
 <a class="skip" href="#inhoud">Direct naar de inhoud</a>
 <header class="site-header">
   <div class="container nav">
-    <a class="brand{' zorg' if zorg else ''}" href="{r}">{logo}</a>
+    <a class="brand" href="{r}">{logo}</a>
     <button class="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
     <ul class="menu" id="menu">{menu}<li><a class="btn btn-primary" href="{r}afspraak/">Plan een afspraak</a></li></ul>
   </div>
@@ -119,7 +119,7 @@ WERKWIJZE = [('Luisteren', 'Zorgproces of bedrijfsvoering, techniek, risico’s 
              ('Implementeren', 'Projectmatig, met duidelijke verantwoordelijkheden en minimale verstoring.'),
              ('Adoptie', 'Gebruikers, beheerders en processen meenemen in de verandering.'),
              ('Beheren', 'Prestaties bewaken en leveranciers op elkaar laten aansluiten.'),
-             ('Verbeteren', 'Roadmap, rapportages en nieuwe mogelijkheden periodiek evalueren.')]
+             ('Verbeteren', 'Rapportages en nieuwe mogelijkheden periodiek samen evalueren.')]
 
 # ---------- Illustraties ----------
 HERO_HOME = '''<svg viewBox="0 0 560 460" role="img" aria-label="Illustratie: SilverCloud verbindt mkb en zorg onder één wolk">
@@ -145,12 +145,12 @@ HERO_ZORG = '''<svg viewBox="0 0 560 460" role="img" aria-label="Illustratie: dr
   <path d="M150 230 l130 -64 l130 64 v54 H150 Z" fill="#fff" stroke="#0f1b2d" stroke-width="3" stroke-linejoin="round"/>
   <rect x="190" y="242" width="40" height="42" fill="#e3f4f2"/><rect x="330" y="242" width="40" height="42" fill="#e3f4f2"/><rect x="262" y="236" width="36" height="48" fill="#00aba3"/>
   <path d="M272 210 h16 M280 202 v16" stroke="#007a74" stroke-width="4" stroke-linecap="round"/>
-  <rect x="60" y="300" width="440" height="40" rx="10" fill="#00aba3"/>
-  <text x="280" y="326" text-anchor="middle" font-family="Exo 2, sans-serif" font-weight="700" font-size="16" fill="#0f1b2d">Lokalisatie &amp; Leefcirkels</text>
-  <rect x="60" y="348" width="440" height="40" rx="10" fill="#007a74"/>
-  <text x="280" y="374" text-anchor="middle" font-family="Exo 2, sans-serif" font-weight="700" font-size="16" fill="#fff">CareDesk</text>
-  <rect x="60" y="396" width="440" height="40" rx="10" fill="#0f1b2d"/>
-  <text x="280" y="422" text-anchor="middle" font-family="Exo 2, sans-serif" font-weight="700" font-size="16" fill="#fff">Netwerkregie</text>
+  <a class="hero-blok" href="zorgtechnologie/"><title>Naar Zorgtechnologie: Lokalisatie &amp; Leefcirkels</title><rect x="60" y="300" width="440" height="40" rx="10" fill="#00aba3"/>
+  <text x="280" y="326" text-anchor="middle" font-family="Exo 2, sans-serif" font-weight="700" font-size="16" fill="#0f1b2d">Lokalisatie &amp; Leefcirkels →</text></a>
+  <a class="hero-blok" href="caredesk/"><title>Naar CareDesk</title><rect x="60" y="348" width="440" height="40" rx="10" fill="#007a74"/>
+  <text x="280" y="374" text-anchor="middle" font-family="Exo 2, sans-serif" font-weight="700" font-size="16" fill="#fff">CareDesk →</text></a>
+  <a class="hero-blok" href="netwerkregie/"><title>Naar Netwerkregie</title><rect x="60" y="396" width="440" height="40" rx="10" fill="#0f1b2d"/>
+  <text x="280" y="422" text-anchor="middle" font-family="Exo 2, sans-serif" font-weight="700" font-size="16" fill="#fff">Netwerkregie →</text></a>
   <circle cx="470" cy="210" r="22" fill="#ed6a3c"/><circle cx="470" cy="210" r="44" fill="none" stroke="#ed6a3c" stroke-width="2" stroke-dasharray="4 6"/>
 </svg>'''
 
@@ -204,9 +204,40 @@ def art(kind):
     base = '<svg viewBox="0 0 320 180" aria-hidden="true"><rect width="320" height="180" fill="var(--accent-soft)"/>'
     wl = '<path d="M20 70 C 40 40, 80 30, 120 34 C 146 4, 200 -2, 230 14 C 252 26, 262 44, 268 62 H 320" fill="none" stroke="#9c9d9e" stroke-width="5" stroke-linecap="round"/>'
     if kind == 'net':
-        b = '<g stroke="#0f1b2d" stroke-width="2.5" fill="#fff"><circle cx="160" cy="110" r="18" fill="#007a74"/><circle cx="80" cy="140" r="12"/><circle cx="240" cy="140" r="12"/><circle cx="100" cy="80" r="12"/><circle cx="220" cy="80" r="12"/></g><path d="M160 110 L80 140 M160 110 L240 140 M160 110 L100 80 M160 110 L220 80" stroke="#0f1b2d" stroke-width="2"/>'
+        b = ('<path d="M34 104 L92 70 L150 104" fill="none" stroke="#0f1b2d" stroke-width="2.5" stroke-linejoin="round"/>'
+             '<rect x="42" y="102" width="100" height="62" rx="3" fill="#fff" stroke="#0f1b2d" stroke-width="2.5"/>'
+             '<path d="M86 84 h12 M92 78 v12" stroke="#007a74" stroke-width="3" stroke-linecap="round"/>'
+             '<rect x="54" y="114" width="22" height="18" rx="2" fill="#e3f4f2"/><rect x="108" y="114" width="22" height="18" rx="2" fill="#e3f4f2"/><rect x="82" y="138" width="20" height="26" rx="2" fill="#00aba3"/>'
+             '<circle cx="65" cy="123" r="4" fill="#ed6a3c"/><rect x="112" y="119" width="14" height="9" rx="1.5" fill="#4697d2"/>'
+             '<g fill="none" stroke="#007a74" stroke-width="2" stroke-linecap="round"><path d="M84 60 a12 12 0 0 1 16 0"/><path d="M79 54 a19 19 0 0 1 26 0"/></g><circle cx="92" cy="66" r="3" fill="#007a74"/>'
+             '<path d="M142 124 H230" stroke="#ed6a3c" stroke-width="3"/><path d="M142 138 H230" stroke="#4697d2" stroke-width="3"/><path d="M142 152 H230" stroke="#9c9d9e" stroke-width="3" stroke-dasharray="5 4"/>'
+             '<path d="M186 88 l14 5 v10 c0 8 -6 13 -14 16 c-8 -3 -14 -8 -14 -16 v-10z" fill="#ed6a3c"/><path d="M180 102 l4 4 l8 -8" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>'
+             '<rect x="230" y="96" width="62" height="70" rx="6" fill="#0f1b2d"/>'
+             '<g fill="#1f3450"><rect x="238" y="106" width="46" height="12" rx="2"/><rect x="238" y="124" width="46" height="12" rx="2"/><rect x="238" y="142" width="46" height="12" rx="2"/></g>'
+             '<g fill="#00aba3"><circle cx="244" cy="112" r="2.5"/><circle cx="244" cy="130" r="2.5"/><circle cx="244" cy="148" r="2.5"/></g><circle cx="252" cy="112" r="2.5" fill="#ed6a3c"/>'
+             '<path d="M262 96 V80 h-16" fill="none" stroke="#0f1b2d" stroke-width="2"/><circle cx="244" cy="80" r="4" fill="#0f1b2d"/>')
     elif kind == 'care':
-        b = '<circle cx="160" cy="110" r="46" fill="none" stroke="#007a74" stroke-width="14"/><circle cx="160" cy="102" r="10" fill="#00aba3"/><path d="M142 128 a18 16 0 0 1 36 0" fill="#00aba3"/><g fill="#fff" stroke="#dce3ea"><rect x="40" y="96" width="56" height="24" rx="12"/><rect x="224" y="96" width="56" height="24" rx="12"/></g>'
+        b = ('<circle cx="160" cy="112" r="50" fill="none" stroke="#007a74" stroke-width="10" stroke-opacity=".9"/>'
+             '<circle cx="160" cy="102" r="14" fill="#00aba3"/><path d="M134 140 a26 22 0 0 1 52 0" fill="#00aba3"/>'
+             '<path d="M144 100 a16 16 0 0 1 32 0" fill="none" stroke="#0f1b2d" stroke-width="3"/><rect x="140" y="98" width="7" height="12" rx="3" fill="#0f1b2d"/><rect x="173" y="98" width="7" height="12" rx="3" fill="#0f1b2d"/><path d="M176 110 q0 10 -10 10" fill="none" stroke="#0f1b2d" stroke-width="2"/>'
+             '<g font-family="IBM Plex Sans, sans-serif" font-size="10" font-weight="600" fill="#0f1b2d" text-anchor="middle">'
+             '<rect x="24" y="62" width="58" height="22" rx="11" fill="#fff" stroke="#c9d3e2"/><text x="53" y="77">ECD</text>'
+             '<rect x="18" y="126" width="70" height="22" rx="11" fill="#fff" stroke="#c9d3e2"/><text x="53" y="141">Zenya</text>'
+             '<rect x="238" y="62" width="62" height="22" rx="11" fill="#fff" stroke="#c9d3e2"/><text x="269" y="77">AFAS</text>'
+             '<rect x="232" y="126" width="74" height="22" rx="11" fill="#fff" stroke="#c9d3e2"/><text x="269" y="141">TOPdesk</text></g>'
+             '<path d="M82 73 L114 92 M88 137 L112 124 M238 73 L206 92 M232 137 L208 124" stroke="#007a74" stroke-width="2" stroke-dasharray="3 4"/>'
+             '<rect x="196" y="40" width="44" height="30" rx="6" fill="#fff" stroke="#0f1b2d" stroke-width="2"/><path d="M206 55 l5 5 l10 -10" fill="none" stroke="#00aba3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M204 70 l-6 8 v-8" fill="#fff" stroke="#0f1b2d" stroke-width="2" stroke-linejoin="round"/>')
+    elif kind == 'lok':
+        b = ('<rect x="36" y="56" width="248" height="112" rx="6" fill="#fff" stroke="#0f1b2d" stroke-width="2.5"/>'
+             '<path d="M120 56 V100 M120 124 V168 M200 56 V92 M200 116 V168 M36 112 H96 M224 112 H284" stroke="#0f1b2d" stroke-width="2"/>'
+             '<rect x="40" y="60" width="78" height="50" fill="#e3f4f2"/>'
+             '<ellipse cx="160" cy="112" rx="66" ry="40" fill="#00aba3" fill-opacity=".14" stroke="#007a74" stroke-width="2" stroke-dasharray="6 5"/>'
+             '<circle cx="152" cy="106" r="8" fill="#0f1b2d"/><path d="M140 128 a12 11 0 0 1 24 0" fill="#0f1b2d"/><rect x="160" y="112" width="8" height="10" rx="2" fill="#00aba3" stroke="#fff" stroke-width="1.5"/>'
+             '<g fill="none" stroke="#00aba3" stroke-width="2" stroke-linecap="round"><path d="M174 108 a8 8 0 0 1 0 12"/><path d="M180 103 a15 15 0 0 1 0 22"/></g>'
+             '<rect x="284" y="96" width="6" height="34" fill="#ed6a3c"/><circle cx="276" cy="113" r="9" fill="#ed6a3c"/><path d="M272 113 h8" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>'
+             '<circle cx="68" cy="140" r="10" fill="none" stroke="#4697d2" stroke-width="3"/><path d="M68 130 V118 h12" fill="none" stroke="#4697d2" stroke-width="3" stroke-linecap="round"/><rect x="74" y="132" width="9" height="9" rx="2" fill="#ed6a3c"/>'
+             '<circle cx="246" cy="76" r="5" fill="#007a74"/><g fill="none" stroke="#007a74" stroke-width="1.8"><path d="M238 70 a11 11 0 0 1 16 0"/><path d="M233 65 a18 18 0 0 1 26 0"/></g>'
+             '<path d="M74 84 l6 -6 l6 6 v10 h-12z" fill="#00aba3"/>')
     elif kind == 'asset':
         b = '<g stroke="#0f1b2d" stroke-width="2.5" fill="#fff"><rect x="96" y="70" width="128" height="80" rx="10"/></g><rect x="110" y="84" width="60" height="10" rx="5" fill="#e3f4f2"/><rect x="110" y="102" width="40" height="10" rx="5" fill="#e3f4f2"/><path d="M196 92 a14 14 0 1 1 -0.1 0" fill="none" stroke="#007a74" stroke-width="4"/><path d="M206 116 l12 12" stroke="#007a74" stroke-width="5" stroke-linecap="round"/><rect x="110" y="122" width="22" height="16" rx="4" fill="#ed6a3c"/><circle cx="60" cy="128" r="9" fill="#00aba3"/><circle cx="262" cy="104" r="9" fill="#00aba3"/>'
     elif kind == 'safe':
@@ -257,12 +288,12 @@ page('', 'SilverCloud – Betrouwbare IT voor het mkb en de zorg',
   <div>
     <span class="kicker" style="color:var(--merk-oranje)">Uitgelicht · SilverCloud Zorg</span>
     <h2>Netwerkregie: een netwerk waarop de zorg kan vertrouwen</h2>
-    <p class="lead" style="margin-top:16px">Niet méér netwerkbeheer, wel volledige regie over de digitale infrastructuur. Eén architectuur, security by design, open calculatie en gedeelde monitoring met uw eigen ICT-afdeling.</p>
-    <div class="actions"><a class="btn btn-highlight" href="zorg/netwerkregie/">Meer over Netwerkregie</a><a class="btn btn-secondary" style="color:#fff;border-color:#fff" href="assets/downloads/whitepaper-netwerkregie-zorg.pdf" download>Download de whitepaper</a></div>
+    <p class="lead" style="margin-top:16px">Niet méér netwerkbeheer: u houdt de regie, wij regelen het beheer. Eén architectuur, security by design, open calculatie op hardware en verbindingen, en desgewenst gedeelde monitoring met uw eigen ICT-afdeling.</p>
+    <div class="actions"><a class="btn btn-highlight" href="zorg/netwerkregie/">Meer over Netwerkregie</a></div>
   </div>
   <div class="uniek" style="grid-template-columns:1fr 1fr">
     <div><h3>Architectuur</h3><p>Eén integraal netwerkdesign als fundament.</p></div>
-    <div><h3>Regie</h3><p>Verantwoordelijk voor de volledige levenscyclus.</p></div>
+    <div><h3>U de regie, wij het beheer</h3><p>U houdt de touwtjes in handen, wij zorgen dat het netwerk werkt.</p></div>
     <div><h3>Transparantie</h3><p>Open calculatie en gedeelde dashboards.</p></div>
     <div><h3>Voor de zorg</h3><p>Segmentatie, redundantie en NEN 7510.</p></div>
   </div>
@@ -272,7 +303,7 @@ page('', 'SilverCloud – Betrouwbare IT voor het mkb en de zorg',
   <div class="grid-4">
     <div class="card flat">{icon('oog')}<h3>Wij kennen uw praktijk</h3><p>We begrijpen wat een storing betekent op de werkvloer, in de winkel of op de afdeling.</p></div>
     <div class="card flat">{icon('netwerk')}<h3>Samenhang</h3><p>Architectuur, implementatie, leveranciersregie en beheer in één hand.</p></div>
-    <div class="card flat">{icon('klok')}<h3>Continuïteit</h3><p>We denken in levenscyclus en roadmap, niet in losse projecten.</p></div>
+    <div class="card flat">{icon('klok')}<h3>Continuïteit</h3><p>We denken in levenscyclus, niet in losse projecten.</p></div>
     <div class="card flat">{icon('mens')}<h3>Korte lijnen</h3><p>Persoonlijk contact met specialisten die uw omgeving kennen.</p></div>
   </div>
 </div></section>
@@ -368,23 +399,24 @@ page('zorg', 'SilverCloud Zorg – Technologie die werkt voor de zorg',
     <span class="badge">SilverCloud Zorg</span>
     <h1 class="display">Technologie die werkt voor de zorg</h1>
     <p class="lead">Het begint bij een netwerk waarop de zorg kan vertrouwen. SilverCloud voert regie over uw digitale infrastructuur en bouwt daarop verder met een servicedesk en zorgtechnologie die werken op de werkvloer.</p>
-    <div class="actions"><a class="btn btn-primary" href="netwerkregie/">Ontdek Netwerkregie</a><a class="btn btn-secondary" href="{r}assets/downloads/whitepaper-netwerkregie-zorg.pdf" download>Download de whitepaper</a></div>
+    <div class="actions"><a class="btn btn-primary" href="#oplossingen">Bekijk onze oplossingen</a><a class="btn btn-secondary" href="{r}contact/">Plan een kennismaking</a></div>
   </div>
-  <div class="hero-visual">{HERO_ZORG}</div>
+  <div class="hero-visual">{HERO_ZORG}
+  <div class="hero-logos"><img src="{r}assets/img/silvercloud-zorg-logo-kleur.svg" alt="SilverCloud Zorg"></div></div>
 </div></section>
 
 <section class="section deep"><div class="container grid-2" style="align-items:center">
   <div>
     <span class="kicker" style="color:var(--merk-oranje)">Het fundament · Netwerkregie</span>
-    <h2>Niet méér netwerkbeheer. Wel volledige regie over uw digitale infrastructuur.</h2>
-    <p class="lead" style="margin-top:16px">Het netwerk is geen kostenpost, maar de digitale ruggengraat van uw zorgorganisatie. Wij nemen verantwoordelijkheid voor architectuur, beveiliging, beschikbaarheid, lifecycle en transparantie. Voor de hele levenscyclus.</p>
+    <h2>Niet méér netwerkbeheer. U houdt de regie, wij regelen het beheer.</h2>
+    <p class="lead" style="margin-top:16px">Uw netwerkinfrastructuur is geen kostenpost, maar de digitale ruggengraat van uw zorgorganisatie. U houdt de regie, wij nemen het beheer uit handen: architectuur, beveiliging, beschikbaarheid en lifecycle.</p>
     <div class="actions"><a class="btn btn-highlight" href="netwerkregie/">Zo werkt Netwerkregie</a></div>
   </div>
   <div class="uniek" style="grid-template-columns:1fr 1fr">
     <div><h3>Architectuur</h3><p>Eén integraal netwerkdesign als fundament.</p></div>
-    <div><h3>Regie</h3><p>Verantwoordelijk voor de volledige levenscyclus.</p></div>
-    <div><h3>Transparantie</h3><p>Open calculatie en gedeelde monitoring.</p></div>
-    <div><h3>Continu verbeteren</h3><p>Eén gezamenlijke roadmap.</p></div>
+    <div><h3>U de regie, wij het beheer</h3><p>U houdt de touwtjes in handen, wij zorgen dat het netwerk werkt.</p></div>
+    <div><h3>Transparantie</h3><p>Open calculatie op netwerkhardware en verbindingen. Gedeelde monitoring is mogelijk.</p></div>
+    <div><h3>Continu verbeteren</h3><p>We evalueren periodiek samen en verbeteren waar het nodig is.</p></div>
   </div>
 </div></section>
 
@@ -393,7 +425,7 @@ page('zorg', 'SilverCloud Zorg – Technologie die werkt voor de zorg',
 <section class="section" id="oplossingen"><div class="container">
   <div class="section-head"><span class="kicker">Drie proposities, één regie</span><h2>Van digitale basis tot ondersteuning op de werkvloer</h2>
   <p class="lead">Netwerkregie is het fundament. Daarop bouwen CareDesk en Zorgtechnologie, met dezelfde regie, dezelfde aanpak en dezelfde kennis van de zorg.</p></div>
-  <a class="prop-card" href="netwerkregie/" style="margin-bottom:32px;flex-direction:row;flex-wrap:wrap"><div class="art" style="flex:1 1 360px">{art('net')}</div><div class="body" style="flex:1 1 360px"><span class="num">01 · NETWERKREGIE · HET FUNDAMENT</span><h3 style="font-size:28px">Een netwerk waarop de zorg kan vertrouwen</h3><p class="muted" style="margin:0">Architectuur, security by design, 24/7 monitoring en lifecyclemanagement, met open calculatie en gedeelde dashboards voor uw eigen ICT-afdeling.</p><span class="tags">Architectuur · Security · Monitoring · Lifecycle</span><span class="btn-link">Meer over Netwerkregie</span></div></a>
+  <a class="prop-card" href="netwerkregie/" style="margin-bottom:32px;flex-direction:row;flex-wrap:wrap"><div class="art" style="flex:1 1 360px">{art('net')}</div><div class="body" style="flex:1 1 360px"><span class="num">01 · NETWERKREGIE · HET FUNDAMENT</span><h3 style="font-size:28px">Een netwerk waarop de zorg kan vertrouwen</h3><p class="muted" style="margin:0">Architectuur, security by design, 24/7 monitoring en lifecyclemanagement, met open calculatie op hardware en verbindingen. Uw eigen ICT-afdeling kan meekijken in dezelfde dashboards, zoals PRTG, FortiAnalyzer en FortiManager.</p><span class="tags">Architectuur · Security · Monitoring · Lifecycle</span><span class="btn-link">Meer over Netwerkregie</span></div></a>
   <div class="grid-2">
     <a class="prop-card" href="caredesk/"><div class="art">{art('care')}</div><div class="body"><span class="num">02 · CAREDESK</span><h3>Een servicedesk die de taal van de zorg spreekt</h3><p class="muted" style="margin:0">Meer dan een helpdesk: één aanspreekpunt, kennis van ECD’s, Zenya en AFAS, en regie richting al uw leveranciers.</p><span class="tags">Overnemen · Versterken · Optimaliseren</span><span class="btn-link">Meer over CareDesk</span></div></a>
     <div class="prop-card static"><div class="art">{art('lok')}</div><div class="body"><span class="num">03 · ZORGTECHNOLOGIE</span><h3>Zorgtechnologie die werkt op de werkvloer</h3><p class="muted" style="margin:0">Met de platforms van Evresys en Blyott, geleverd en geïntegreerd door SilverCloud. Van advies tot beheer.</p>
@@ -404,28 +436,15 @@ page('zorg', 'SilverCloud Zorg – Technologie die werkt voor de zorg',
 
 <section class="section mist"><div class="container">
   <div class="section-head"><span class="kicker">Waarom SilverCloud Zorg</span><h2>Wat ons anders maakt</h2>
-  <div class="lijn accent"><p class="lead">We zijn niet alleen uitvoerder, maar partner. Niet alleen beheerder, maar regisseur. Dat ziet u terug in hoe we werken en afrekenen.</p></div></div>
+  <div class="lijn accent"><p class="lead">We zijn niet alleen uitvoerder, maar ook partner. Niet alleen beheerder, maar ook regisseur. Dat ziet u terug in hoe we werken en afrekenen.</p></div></div>
   <div class="uniek">
     <div><h3>Architectuur boven producten</h3><p>We beginnen bij één integraal ontwerp en kiezen pas daarna de techniek. Elke wijziging en investering wordt daaraan getoetst.</p></div>
-    <div><h3>Open calculatie</h3><p>Hardware en licenties tegen inzichtelijke inkoopprijzen met een vooraf afgesproken, vast opslagpercentage.</p></div>
-    <div><h3>Gedeelde monitoring</h3><p>Uw eigen ICT-afdeling kijkt mee in dezelfde dashboards, meldingen en rapportages.</p></div>
+    <div><h3>Open calculatie</h3><p>Netwerkhardware en internetverbindingen tegen inzichtelijke inkoopprijzen met een vooraf afgesproken, vast opslagpercentage.</p></div>
+    <div><h3>Gedeelde monitoring</h3><p>Desgewenst kijkt uw eigen ICT-afdeling mee in dezelfde dashboards, meldingen en rapportages, zoals PRTG, FortiAnalyzer en FortiManager.</p></div>
     <div><h3>Kennis van de zorg</h3><p>We weten wat uitval betekent voor zorgalarmering, domotica en het ECD. We gaan pas weg als de zorg weer operationeel is.</p></div>
-    <div><h3>Volledige integrator</h3><p>Van netwerk tot wearable en koppeling: wij leveren, integreren en beheren. Eén aanspreekpunt, ook richting andere leveranciers.</p></div>
-    <div><h3>Eén team met uw ICT</h3><p>Heldere rollen, gedeelde kennis en een gezamenlijke meerjarenroadmap.</p></div>
+    <div><h3>Volledige integrator</h3><p>Van netwerk tot wearable en koppeling: wij leveren, integreren en beheren. Waar wenselijk zitten fabrikant (zoals HPE of Evresys), integrator en u samen aan tafel.</p></div>
+    <div><h3>Eén team met uw ICT</h3><p>Heldere rollen, gedeelde kennis en periodiek samen vooruitkijken.</p></div>
   </div>
-</div></section>
-
-<section class="section"><div class="container grid-2" style="align-items:start">
-  <div><span class="kicker">Zorgspecifiek</span><h2>Ontworpen voor de eisen van de zorg</h2>
-  <p class="lead" style="margin-top:16px">Een kantoornetwerk overleeft een uur storing. In de zorg raakt uitval direct de veiligheid van cliënten. Daarom ontwerpen we op beschikbaarheid, segmentatie en voorspelbare prestaties.</p></div>
-  <ul class="checklist">
-    <li>Zorgalarmering, domotica en medische apparatuur in eigen, afgeschermde netwerksegmenten</li>
-    <li>Redundante internetverbindingen met 4G/5G-back-up op kritieke zorglocaties</li>
-    <li>Gemonitorde noodstroom (UPS) en directe signalering bij spannings- of lijnuitval</li>
-    <li>Bouwblokken per locatietype: wonen, behandelen, kantoor en ambulant</li>
-    <li>Gecertificeerd voor NEN 7510, ISO 27001 en ISO 9001</li>
-    <li>Kennis van ECD, Zenya, AFAS, TOPdesk en domotica-koppelingen</li>
-  </ul>
 </div></section>
 
 <section class="section deep"><div class="container">
@@ -453,8 +472,8 @@ page('zorg/netwerkregie', 'Netwerkregie voor de zorg – SilverCloud Zorg',
   <div>
     <span class="badge">Propositie 01 · Netwerkregie</span>
     <h1 class="display">Een netwerk waarop de zorg kan vertrouwen</h1>
-    <p class="lead">Niet méér netwerkbeheer, wel volledige regie over uw digitale infrastructuur. Wij nemen verantwoordelijkheid voor architectuur, beveiliging, beschikbaarheid, doorontwikkeling én transparantie, voor de volledige levenscyclus van uw netwerk.</p>
-    <div class="actions"><a class="btn btn-primary" href="{r}contact/">Plan een netwerkgesprek</a><a class="btn btn-secondary" href="{r}assets/downloads/whitepaper-netwerkregie-zorg.pdf" download>Download de whitepaper</a></div>
+    <p class="lead">Niet méér netwerkbeheer, wel grip op uw netwerkinfrastructuur. U houdt de regie, wij nemen het beheer uit handen: architectuur, beveiliging, beschikbaarheid en doorontwikkeling, voor de volledige levenscyclus van uw netwerk.</p>
+    <div class="actions"><a class="btn btn-primary" href="{r}contact/">Plan een netwerkgesprek</a></div>
   </div>
   <div class="hero-visual"><div class="prop-card" style="pointer-events:none">{art('net').replace('viewBox="0 0 320 180"','viewBox="0 0 320 180" style="border-radius:14px"')}</div></div>
 </div></section>
@@ -470,7 +489,7 @@ page('zorg/netwerkregie', 'Netwerkregie voor de zorg – SilverCloud Zorg',
   <div class="section-head"><span class="kicker">Van beheer naar regie</span><h2>De paradigmaverschuiving</h2></div>
   <div class="compare">
     <div class="before"><h3>Traditioneel netwerkbeheer</h3><ul><li>Apparatuurgedreven: start bij de techniek</li><li>Reactief: wachten tot het stuk gaat</li><li>Losse projecten en leveranciers</li><li>Vervangen wanneer het nodig is</li><li>Black box: verborgen marges, beperkt inzicht</li></ul></div>
-    <div class="after"><h3>SilverCloud Netwerkregie</h3><ul><li>Architectuurgedreven: start bij het integrale design</li><li>Proactief: monitoring en lifecyclemanagement</li><li>Netwerk als onderdeel van de zorgketen</li><li>Vernieuwen volgens een gezamenlijke roadmap</li><li>Open calculatie en gedeelde dashboards</li></ul></div>
+    <div class="after"><h3>SilverCloud Netwerkregie</h3><ul><li>Architectuurgedreven: start bij het integrale design</li><li>Proactief: monitoring en lifecyclemanagement</li><li>Netwerk als onderdeel van de zorgketen</li><li>Vernieuwen volgens een gezamenlijk vervangingsplan</li><li>Open calculatie op hardware en verbindingen, gedeelde dashboards mogelijk</li></ul></div>
   </div>
 </div></section>
 
@@ -481,7 +500,7 @@ page('zorg/netwerkregie', 'Netwerkregie voor de zorg – SilverCloud Zorg',
     <div class="pillar"><h3>Regie</h3><p>Verantwoordelijk voor ontwerp, implementatie, beheer, beveiliging, monitoring, lifecycle en innovatie.</p></div>
     <div class="pillar"><h3>Transparantie</h3><p>Open calculatie en monitoring die ook uw eigen ICT-afdeling realtime inzicht geeft.</p></div>
     <div class="pillar"><h3>Voor de zorg</h3><p>Maximale beschikbaarheid, veilige segmentatie en een inrichting die past bij de functie van de locatie.</p></div>
-    <div class="pillar"><h3>Continu verbeteren</h3><p>We vervangen niet omdat iets oud is, maar omdat het in de gezamenlijke roadmap past.</p></div>
+    <div class="pillar"><h3>Continu verbeteren</h3><p>We vervangen niet omdat iets oud is, maar omdat het in het gezamenlijke vervangingsplan past.</p></div>
   </div>
 </div></section>
 
@@ -542,19 +561,14 @@ page('zorg/netwerkregie', 'Netwerkregie voor de zorg – SilverCloud Zorg',
 <section class="section mist"><div class="container">
   <div class="section-head"><span class="kicker">De overstap</span><h2>Een gecontroleerde transitie naar rust</h2><p class="lead">U hoeft niet eerst alles te vervangen. We nemen het beheer over zoals het is en moderniseren stap voor stap.</p></div>
   <div class="grid-2">
-    <div class="route"><span class="badge">Fase 1</span><h3>Transitie &amp; implementatie</h3><ul class="checklist"><li>Beheeroverdracht ‘as-is’: direct operationele verantwoordelijkheid</li><li>Inventarisatie en integraal netwerkdesign</li><li>Elke storing is een stap richting de doelarchitectuur</li><li>Gefaseerde modernisering volgens de gezamenlijke roadmap</li></ul></div>
+    <div class="route"><span class="badge">Fase 1</span><h3>Transitie &amp; implementatie</h3><ul class="checklist"><li>Beheeroverdracht ‘as-is’: direct operationele verantwoordelijkheid</li><li>Inventarisatie en integraal netwerkdesign</li><li>Elke storing is een stap richting de doelarchitectuur</li><li>Gefaseerde modernisering volgens een gezamenlijk plan</li></ul></div>
     <div class="route voorkeur"><span class="badge">Fase 2</span><h3>Reguliere dienstverlening</h3><ul class="checklist"><li>Netwerk volledig gestandaardiseerd</li><li>Centraal beheer, monitoring en updates op afstand</li><li>Van reactief blussen naar strategisch doorontwikkelen</li></ul></div>
   </div>
 </div></section>
 
-<section class="section"><div class="container grid-2" style="align-items:center">
-  <div><span class="kicker">Whitepaper</span><h2>Lees onze visie op Netwerkregie</h2><p class="lead" style="margin-top:16px">De vijf uitgangspunten, slimme wifi-planning en onze aanpak, in één document.</p></div>
-  {wp_card(r)}
-</div></section>
-
 <section class="section mist"><div class="container narrow">
   <span class="kicker">Veelgestelde vragen</span><h2 style="margin-bottom:16px">Goed om te weten</h2>
-  <details><summary>Moeten we ons huidige netwerk eerst vervangen?</summary><p>Nee. We nemen het beheer ‘as-is’ over om de continuïteit te borgen. Daarna moderniseren we gefaseerd: defecte of verouderde apparatuur wordt vervangen door de nieuwe standaard, binnen de gezamenlijke roadmap.</p></details>
+  <details><summary>Moeten we ons huidige netwerk eerst vervangen?</summary><p>Nee. We nemen het beheer ‘as-is’ over om de continuïteit te borgen. Daarna moderniseren we gefaseerd: defecte of verouderde apparatuur wordt vervangen door de nieuwe standaard, volgens een gezamenlijk plan.</p></details>
   <details><summary>Werkt SilverCloud met één vast merk?</summary><p>We beginnen bij de architectuur, niet bij een merk. Onze standaard doelarchitectuur gebruikt marktleidende technologie zoals HPE Aruba en Fortinet, omdat die centraal beheer en security goed ondersteunt. De keuze volgt altijd het ontwerp.</p></details>
   <details><summary>Wat ziet onze eigen ICT-afdeling?</summary><p>Hetzelfde als wij. Monitoringdashboards, meldingen en rapportages zijn volledig inzichtelijk voor uw interne ICT. We werken als één team met heldere rollen.</p></details>
   <details><summary>Hoe zijn de kosten opgebouwd?</summary><p>Hardware en licenties leveren we op basis van open calculatie: inzichtelijke inkoopprijs plus een vooraf afgesproken vast opslagpercentage. Het beheer is een vaste vergoeding op basis van omvang en complexiteit van uw locaties.</p></details>
@@ -570,7 +584,7 @@ page('zorg/netwerkregie', 'Netwerkregie voor de zorg – SilverCloud Zorg',
 
 {certs(r)}
 
-{cta('Klaar voor een netwerk dat de zorg ondersteunt?', 'Bespreek uw huidige architectuur met onze specialisten. We laten zien wat Netwerkregie betekent voor beschikbaarheid, veiligheid en investeringen.', 'Plan een netwerkgesprek', r + 'contact/', r, 'Download de whitepaper', r + 'assets/downloads/whitepaper-netwerkregie-zorg.pdf')}
+{cta('Klaar voor een netwerk dat de zorg ondersteunt?', 'Bespreek uw huidige architectuur met onze specialisten. We laten zien wat Netwerkregie betekent voor beschikbaarheid, veiligheid en investeringen.', 'Plan een netwerkgesprek', r + 'contact/', r)}
 ''', label='zorg', nav='zorg', sub='netwerkregie')
 
 # ---------- CAREDESK ----------
@@ -1006,7 +1020,7 @@ page('zorg/assetguard', 'Hulpmiddelenbeheer met AssetGuard – SilverCloud Zorg'
 # ---------- KENNIS & CASES ----------
 r = '../'
 page('kennis', 'Kennis & cases – SilverCloud',
- 'Praktijkverhalen van zorgorganisaties, whitepapers over netwerkregie en lokalisatie, video’s en de blog van SilverCloud.', f'''
+ 'Praktijkverhalen van zorgorganisaties, whitepapers over lokalisatie, video’s en de blog van SilverCloud.', f'''
 <section class="hero"><div class="container narrow">
   <span class="badge">Kennis &amp; cases</span>
   <h1 class="display" style="margin:16px 0">Uit de praktijk</h1>
@@ -1052,7 +1066,6 @@ page('kennis', 'Kennis & cases – SilverCloud',
 <section class="section"><div class="container">
   <div class="section-head"><span class="kicker">Downloads</span><h2>Whitepapers en factsheets</h2></div>
   <div class="grid-3">
-    {wp_card(r)}
     <a class="card download" href="{r}assets/downloads/brochure-caredesk.pdf" download>{icon('helpdesk')}<h3>Brochure CareDesk</h3><p>Dé servicedesk voor zorgorganisaties: overnemen, versterken of optimaliseren.</p><span class="btn-link">Download (pdf)</span></a>
     <a class="card download" href="{r}assets/downloads/whitepaper-evresys-twee-routes.pdf" download>{icon('cirkel')}<h3>Twee routes naar slimme zorgtechnologie</h3><p>Evresys als totaaloplossing of als aanvulling op een bestaand zorgoproepsysteem.</p><span class="btn-link">Download (pdf)</span></a>
     <a class="card download" href="{r}assets/downloads/whitepaper-evresys-totaaloplossing.pdf" download>{icon('bel')}<h3>Evresys als totaaloplossing</h3><p>Voor kleinere zorgorganisaties en nieuwe locaties zonder zorgoproepsysteem.</p><span class="btn-link">Download (pdf)</span></a>
@@ -1088,7 +1101,7 @@ page('over-ons', 'Over SilverCloud – werkwijze en visie',
   <span class="badge">Over SilverCloud</span>
   <h1 class="display" style="margin:16px 0">ICT-specialisten die de zorg kennen</h1>
   <p class="lead">SilverCloud helpt organisaties om technologie betrouwbaar onderdeel te maken van hun dagelijkse werk. In de zorg betekent dat: weten hoe zorgteams werken, welke uitdagingen er spelen, welke applicaties en zorgtechnologie er draaien en hoe je daarover communiceert. Die kennis is ons vertrekpunt, de techniek volgt.</p>
-  <div class="lijn"><p>We werken naast uw interne organisatie en andere leveranciers. Niet vanuit losse producten, maar vanuit architectuur, duidelijke regie en een gezamenlijke roadmap. Zo ontstaat een omgeving die vandaag betrouwbaar werkt en morgen kan meegroeien.</p></div>
+  <div class="lijn"><p>We werken naast uw interne organisatie en andere leveranciers. Niet vanuit losse producten, maar vanuit architectuur, duidelijke regie en gezamenlijke planning. Zo ontstaat een omgeving die vandaag betrouwbaar werkt en morgen kan meegroeien.</p></div>
 </div></section>
 
 {zorgkennis(r)}

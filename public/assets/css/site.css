@@ -360,3 +360,11 @@ a.card.download .btn-link { margin-top: auto; }
 .prop-card .sublinks { list-style: none; padding: 0; margin: 4px 0 0; display: grid; gap: 8px; }
 .prop-card .sublinks a { font-weight: 600; color: var(--ink); text-decoration: none; display: flex; justify-content: space-between; padding: 10px 14px; border: 1px solid var(--line); border-radius: var(--radius-md); }
 .prop-card .sublinks a:hover { border-color: var(--accent); color: var(--accent); }
+
+/* v0.5: vast submenu Zorg en klikbare blokken in de hero-illustratie */
+.sub-nav { position: sticky; top: 77px; z-index: 40; }
+.hero-visual a.hero-blok { cursor: pointer; }
+.hero-visual a.hero-blok rect { transition: filter .15s ease, transform .15s ease; }
+.hero-visual a.hero-blok:hover rect, .hero-visual a.hero-blok:focus rect { filter: brightness(1.12); }
+.hero-visual a.hero-blok:focus { outline: none; }
+.hero-visual a.hero-blok:focus-visible rect { stroke: #ed6a3c; stroke-width: 3; }
