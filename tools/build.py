@@ -238,7 +238,7 @@ page('', 'SilverCloud – Betrouwbare IT voor het mkb en de zorg',
     <a class="label-card label-computing" href="computing/">
       <span class="kicker">SilverCloud Computing</span>
       <h3 style="font-size:28px">IT zonder zorgen voor het mkb</h3>
-      <p class="muted">Een moderne managed service provider: wij regelen uw ICT, u onderneemt.</p>
+      <p class="muted">Uw ICT-partner voor het mkb: wij regelen uw ICT, u onderneemt.</p>
       <ul><li>Moderne werkplek (BrainOnline 375)</li><li>Veilig netwerk</li><li>Toegang tot al uw bedrijfsapplicaties</li><li>Beveiliging, back-up en servicedesk</li></ul>
       <span class="go">Naar Computing →</span>
     </a>
@@ -305,55 +305,53 @@ page('', 'SilverCloud – Betrouwbare IT voor het mkb en de zorg',
 
 # ---------- COMPUTING ----------
 r = '../'
-page('computing', 'SilverCloud Computing – De moderne managed service provider voor het mkb',
+page('computing', 'SilverCloud Computing – Uw ICT-partner voor het mkb',
  'SilverCloud Computing regelt de ICT voor het mkb: moderne werkplek, veilig netwerk, toegang tot al uw bedrijfsapplicaties, beveiliging, back-up en één servicedesk.', f'''
 <section class="hero"><div class="container hero-grid">
   <div>
     <span class="badge">SilverCloud Computing</span>
     <h1 class="display">U onderneemt. Wij regelen de ICT.</h1>
-    <p class="lead">SilverCloud is een managed service provider, maar dan modern en ontzorgend. We regelen uw werkplek, een veilig netwerk, toegang tot al uw bedrijfsapplicaties en alles wat daarbij hoort. Eén aanspreekpunt, vaste afspraken, geen gedoe.</p>
-    <div class="actions"><a class="btn btn-primary" href="{r}contact/">Plan een ICT-scan</a><a class="btn btn-link" href="#diensten">Wat we regelen</a></div>
+    <p class="lead">SilverCloud Computing neemt uw ICT uit handen. We regelen uw werkplek, een veilig netwerk, toegang tot uw bedrijfsapplicaties en alles wat daarbij hoort. Vaste afspraken, mensen die uw omgeving kennen, geen gedoe.</p>
+    <div class="actions"><a class="btn btn-primary" href="{r}contact/">Plan een ICT-scan</a><a class="btn btn-link" href="#diensten">Wat we doen voor het mkb</a></div>
   </div>
-  <div class="hero-visual">{HERO_COMP}</div>
+  <div class="hero-visual">{HERO_COMP}
+  <div class="hero-logos"><img src="{r}assets/img/silvercloud-logo-kleur.svg" alt="SilverCloud Computing"></div></div>
 </div></section>
 
 <section class="section mist" id="diensten"><div class="container">
-  <div class="section-head"><span class="kicker">Wat we regelen</span><h2>Alles wat uw ICT nodig heeft, onder één dak</h2>
+  <div class="section-head"><span class="kicker">Wat we doen voor het mkb</span><h2>Alles wat uw ICT nodig heeft, onder één dak</h2>
   <div class="lijn"><p class="lead">U hoeft niet te weten hoe het werkt. U moet erop kunnen rekenen.</p></div></div>
   <div class="grid-3">
-    <div class="card" id="werkplek">{icon('werkplek')}<h3>Moderne werkplek</h3><p>Microsoft 365, laptops en telefoons die wij inrichten en beheren, met BrainOnline 375 als beheerde werkplek. Een nieuwe collega logt op dag één in en kan aan de slag, op kantoor, thuis of onderweg.</p></div>
-    <div class="card" id="netwerken">{icon('netwerk')}<h3>Veilig netwerk</h3><p>Firewall, wifi en een netwerk dat is ontworpen in plaats van gegroeid. Met proactieve monitoring en de internetverbinding die bij uw locatie past.</p></div>
-    <div class="card" id="applicaties">{icon('cloud')}<h3>Toegang tot al uw applicaties</h3><p>Eén veilige login voor uw boekhouding, CRM, ERP en andere bedrijfsapplicaties. Met meervoudige authenticatie, vanaf elke plek.</p></div>
-    <div class="card" id="beveiliging">{icon('schild')}<h3>Beveiliging &amp; back-up</h3><p>Updates, bescherming tegen virussen en phishing, en back-ups die we ook echt testen. Gaat er iets mis, dan bent u snel weer aan het werk.</p></div>
+    <div class="card" id="werkplek">{icon('werkplek')}<h3>Moderne werkplek</h3><p>Met BrainOnline 375 krijgt u een complete, beheerde werkplek: Microsoft 365, laptops en telefoons, door ons ingericht, beveiligd en up-to-date gehouden. Iedereen werkt in dezelfde vertrouwde omgeving, en een nieuwe collega kan op dag één aan de slag.</p></div>
+    <div class="card" id="netwerken">{icon('netwerk')}<h3>Veilig netwerk</h3><p>Een netwerk dat is ontworpen voor uw organisatie, in plaats van gegroeid naar uw organisatie. Met proactieve monitoring en beheer, de juiste beveiligingsinstellingen en een internetverbinding die past bij uw locatie.</p></div>
+    <div class="card" id="applicaties">{icon('cloud')}<h3>Toegang tot al uw applicaties</h3><p>Waar uw boekhouding, CRM, ERP en andere applicaties het ondersteunen, regelen we één veilige login (Single Sign-On) met meervoudige authenticatie. Voor applicaties die dat niet kunnen, zoeken we samen de veiligste werkbare oplossing.</p></div>
+    <div class="card" id="beveiliging">{icon('schild')}<h3>Beveiliging &amp; back-up</h3><p>Updates, bescherming tegen virussen en phishing, en een back-up die verder gaat dan de standaardvoorziening van Microsoft. Gaat er iets mis, dan bent u snel weer aan het werk.</p></div>
     <div class="card" id="helpdesk">{icon('helpdesk')}<h3>Servicedesk</h3><p>Eén nummer, mensen die uw omgeving kennen. We lossen het op en voorkomen dat het opnieuw gebeurt.</p></div>
-    <div class="card" id="telefonie">{icon('telefoon')}<h3>Telefonie &amp; samenwerken</h3><p>Bellen, vergaderen en samenwerken vanuit één omgeving. Bereikbaar waar u ook werkt.</p></div>
+    <div class="card" id="telefonie">{icon('telefoon')}<h3>Telefonie &amp; samenwerken</h3><p>Vergaderen en samenwerken in Microsoft Teams, bellen met Xelion-telefonie. Goed bereikbaar, op kantoor en daarbuiten.</p></div>
   </div>
 </div></section>
 
 <section class="section deep"><div class="container">
-  <div class="section-head"><span class="kicker" style="color:var(--merk-oranje)">Een MSP, maar dan anders</span><h2>Ontzorgen betekent vooruitkijken</h2>
+  <div class="section-head"><span class="kicker" style="color:var(--merk-oranje)">Uw ICT-partner, maar dan anders</span><h2>Ontzorgen betekent vooruitkijken</h2>
   <p class="lead">Veel ICT-partijen wachten tot u belt. Wij zorgen dat u minder hoeft te bellen.</p></div>
   <div class="uniek">
     <div><h3>Proactief, niet reactief</h3><p>We monitoren uw omgeving en lossen problemen op voordat u ze merkt.</p></div>
-    <div><h3>Voorspelbare kosten</h3><p>Een vast bedrag per gebruiker per maand. Hardware en licenties met een open prijsopbouw, zonder verrassingen achteraf.</p></div>
-    <div><h3>Open over wat we doen</h3><p>U ziet wat we beheren, wat er speelt en wat eraan komt. Geen black box.</p></div>
-    <div><h3>Eén aanspreekpunt</h3><p>Ook voor uw andere ICT-leveranciers. Wij regelen het, u hoort het resultaat.</p></div>
+    <div><h3>Voorspelbare kosten</h3><p>Vaste maandbedragen en vooraf heldere afspraken over wat er wel en niet in zit.</p></div>
     <div><h3>We denken mee</h3><p>Groeit u, verhuist u of wilt u slimmer werken? We maken samen een plan voor uw ICT.</p></div>
-    <div><h3>Veilig en gecertificeerd</h3><p>We werken volgens ISO 27001 en ISO 9001: zorgvuldig met uw gegevens en continu verbeteren.</p></div>
   </div>
 </div></section>
 
 <section class="section"><div class="container">
   <div class="section-head"><span class="kicker">Overstappen</span><h2>In vier stappen geregeld</h2><p class="lead">Overstappen klinkt als gedoe. Dat nemen wij voor onze rekening.</p></div>
-  {steps([('Kennismaken', 'Wat doet u, wat werkt er en wat zit u dwars?'), ('ICT-scan', 'We brengen uw omgeving, risico’s en kosten in kaart.'), ('Overstap', 'Gepland en buiten uw drukke uren. U merkt er weinig van.'), ('Beheer &amp; verbeteren', 'Vaste afspraken, vast aanspreekpunt en jaarlijks samen vooruitkijken.')])}
+  {steps([('Kennismaken', 'Wat doet u, wat werkt er en wat zit u dwars?'), ('ICT-scan', 'We brengen uw omgeving, risico’s en kosten in kaart.'), ('Overstap', 'Projectmatig gepland, op een moment dat u er zo min mogelijk last van heeft.'), ('Beheer &amp; verbeteren', 'Vaste afspraken, mensen die uw omgeving kennen en jaarlijks samen vooruitkijken.')])}
 </div></section>
 
 <section class="section mist"><div class="container narrow">
   <span class="kicker">Veelgestelde vragen</span><h2 style="margin-bottom:16px">Goed om te weten</h2>
-  <details><summary>Voor welke organisaties werkt SilverCloud Computing?</summary><p>Voor mkb-organisaties die hun ICT goed geregeld willen hebben, zonder er zelf een afdeling voor op te bouwen. Of u nu één locatie heeft of meerdere: we stemmen de dienstverlening af op uw omvang.</p></details>
-  <details><summary>Kunnen we overstappen zonder stilstand?</summary><p>Ja. We plannen de migratie projectmatig, testen vooraf en schakelen over op een moment dat u het minst merkt.</p></details>
-  <details><summary>Hoe zit het met de kosten?</summary><p>U betaalt een vast bedrag per gebruiker per maand voor werkplek en beheer. Wat er wel en niet in zit, leggen we vooraf vast.</p></details>
-  <details><summary>Wat als we al een ICT-leverancier hebben voor een deel van onze omgeving?</summary><p>Dan stemmen we met die partij af. Wij voeren de regie, zodat u één aanspreekpunt houdt.</p></details>
+  <details><summary>Voor welke organisaties werkt SilverCloud Computing?</summary><p>Voor mkb-organisaties die hun ICT goed geregeld willen hebben, zonder er zelf een afdeling voor op te bouwen. Heeft u al eigen ICT-mensen? Dan ondersteunen we hen en vullen we aan waar dat nodig is. Of u nu één locatie heeft of meerdere: we stemmen de dienstverlening af op uw omvang.</p></details>
+  <details><summary>Hoeveel last hebben we van een overstap?</summary><p>Helemaal zonder hinder gaat een overstap zelden, en dat zeggen we liever eerlijk vooraf. We plannen de migratie projectmatig, bereiden zoveel mogelijk vooraf voor en spreken samen af wanneer we overschakelen, zodat u er zo min mogelijk last van heeft.</p></details>
+  <details><summary>Hoe zit het met de kosten?</summary><p>Dat hangt af van wat we voor u regelen. Voor de werkplek met BrainOnline 375 betaalt u een vast bedrag per gebruiker per maand. Netwerk, beveiliging en andere diensten stemmen we af op uw situatie. Wat er wel en niet in zit, leggen we altijd vooraf vast.</p></details>
+  <details><summary>Wat als we al een ICT-leverancier hebben voor een deel van onze omgeving?</summary><p>Dat kan prima: we stemmen met die partij af waar dat nodig is. Wilt u dat wij de regie over al uw ICT-leveranciers voeren, zodat u één aanspreekpunt heeft? Dan kunnen we dat als aanvullende dienst afspreken.</p></details>
 </div></section>
 
 {certs(r, 'Wij werken aantoonbaar zorgvuldig met uw gegevens: kwaliteit en informatiebeveiliging zijn onafhankelijk gecertificeerd. Dezelfde standaard die we in de zorg hanteren, krijgt u ook als mkb-klant.')}
