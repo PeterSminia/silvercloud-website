@@ -425,10 +425,10 @@ page('zorg', 'SilverCloud Zorg – Technologie die werkt voor de zorg',
 <section class="section" id="oplossingen"><div class="container">
   <div class="section-head"><span class="kicker">Drie proposities, één regie</span><h2>Van digitale basis tot ondersteuning op de werkvloer</h2>
   <p class="lead">Netwerkregie is het fundament. Daarop bouwen CareDesk en Zorgtechnologie, met dezelfde regie, dezelfde aanpak en dezelfde kennis van de zorg.</p></div>
-  <a class="prop-card" href="netwerkregie/" style="margin-bottom:32px;flex-direction:row;flex-wrap:wrap"><div class="art" style="flex:1 1 360px">{art('net')}</div><div class="body" style="flex:1 1 360px"><span class="num">01 · NETWERKREGIE · HET FUNDAMENT</span><h3 style="font-size:28px">Een netwerk waarop de zorg kan vertrouwen</h3><p class="muted" style="margin:0">Architectuur, security by design, 24/7 monitoring en lifecyclemanagement, met open calculatie op hardware en verbindingen. Uw eigen ICT-afdeling kan meekijken in dezelfde dashboards, zoals PRTG, FortiAnalyzer en FortiManager.</p><span class="tags">Architectuur · Security · Monitoring · Lifecycle</span><span class="btn-link">Meer over Netwerkregie</span></div></a>
+  <a class="prop-card" href="netwerkregie/" style="margin-bottom:32px;flex-direction:row;flex-wrap:wrap"><div class="art" style="flex:1 1 360px">{art('net')}</div><div class="body" style="flex:1 1 360px"><span class="num">NETWERKREGIE · HET FUNDAMENT</span><h3 style="font-size:28px">Een netwerk waarop de zorg kan vertrouwen</h3><p class="muted" style="margin:0">Architectuur, security by design, 24/7 monitoring en lifecyclemanagement, met open calculatie op hardware en verbindingen. Uw eigen ICT-afdeling kan meekijken in dezelfde dashboards, zoals PRTG, FortiAnalyzer en FortiManager.</p><span class="tags">Architectuur · Security · Monitoring · Lifecycle</span><span class="btn-link">Meer over Netwerkregie</span></div></a>
   <div class="grid-2">
-    <a class="prop-card" href="caredesk/"><div class="art">{art('care')}</div><div class="body"><span class="num">02 · CAREDESK</span><h3>Een servicedesk die de taal van de zorg spreekt</h3><p class="muted" style="margin:0">Meer dan een helpdesk: één aanspreekpunt, kennis van ECD’s, Zenya en AFAS, en regie richting al uw leveranciers.</p><span class="tags">Overnemen · Versterken · Optimaliseren</span><span class="btn-link">Meer over CareDesk</span></div></a>
-    <div class="prop-card static"><div class="art">{art('lok')}</div><div class="body"><span class="num">03 · ZORGTECHNOLOGIE</span><h3>Zorgtechnologie die werkt op de werkvloer</h3><p class="muted" style="margin:0">Met de platforms van Evresys en Blyott, geleverd en geïntegreerd door SilverCloud. Van advies tot beheer.</p>
+    <a class="prop-card" href="caredesk/"><div class="art">{art('care')}</div><div class="body"><span class="num">CAREDESK</span><h3>Een servicedesk die de taal van de zorg spreekt</h3><p class="muted" style="margin:0">Meer dan een helpdesk: één aanspreekpunt, kennis van ECD’s, Zenya en AFAS, en regie richting al uw leveranciers.</p><span class="tags">Overnemen · Versterken · Optimaliseren</span><span class="btn-link">Meer over CareDesk</span></div></a>
+    <div class="prop-card static"><div class="art">{art('lok')}</div><div class="body"><span class="num">ZORGTECHNOLOGIE</span><h3>Zorgtechnologie die werkt op de werkvloer</h3><p class="muted" style="margin:0">Met de platforms van Evresys en Blyott, geleverd en geïntegreerd door SilverCloud. Van advies tot beheer.</p>
       <ul class="sublinks"><li><a href="lokalisatie-leefcirkels/">Lokalisatie &amp; Leefcirkels <span aria-hidden="true">→</span></a></li><li><a href="medewerkersveiligheid/">Medewerkersveiligheid <span aria-hidden="true">→</span></a></li><li><a href="assetguard/">Hulpmiddelenbeheer <span aria-hidden="true">→</span></a></li></ul>
       <a class="btn-link" href="zorgtechnologie/">Meer over Zorgtechnologie</a></div></div>
   </div>
@@ -470,7 +470,7 @@ page('zorg/netwerkregie', 'Netwerkregie voor de zorg – SilverCloud Zorg',
  'Niet méér netwerkbeheer, wel volledige regie over uw digitale infrastructuur: architectuur, security by design, open calculatie en gedeelde monitoring.', f'''
 <section class="hero"><div class="container hero-grid">
   <div>
-    <span class="badge">Propositie 01 · Netwerkregie</span>
+    <span class="badge">Netwerkregie</span>
     <h1 class="display">Een netwerk waarop de zorg kan vertrouwen</h1>
     <p class="lead">Niet méér netwerkbeheer, wel grip op uw netwerkinfrastructuur. U houdt de regie, wij nemen het beheer uit handen: architectuur, beveiliging, beschikbaarheid en doorontwikkeling, voor de volledige levenscyclus van uw netwerk.</p>
     <div class="actions"><a class="btn btn-primary" href="{r}contact/">Plan een netwerkgesprek</a><a class="btn btn-secondary" href="{r}assets/downloads/whitepaper-netwerkregie-zorg.pdf" download>Download de whitepaper</a></div>
@@ -499,7 +499,7 @@ page('zorg/netwerkregie', 'Netwerkregie voor de zorg – SilverCloud Zorg',
     <div class="pillar"><h3>Architectuur</h3><p>Eén integraal netwerkdesign als ‘single source of truth’. Elke wijziging wordt eraan getoetst. Zo voorkomen we technische schuld.</p></div>
     <div class="pillar"><h3>Regie</h3><p>Verantwoordelijk voor ontwerp, implementatie, beheer, beveiliging, monitoring, lifecycle en innovatie.</p></div>
     <div class="pillar"><h3>Transparantie</h3><p>Open calculatie en monitoring die ook uw eigen ICT-afdeling realtime inzicht geeft.</p></div>
-    <div class="pillar"><h3>Voor de zorg</h3><p>Maximale beschikbaarheid, veilige segmentatie en een inrichting die past bij de functie van de locatie.</p></div>
+    <div class="pillar"><h3>Voor de zorg</h3><p>De veiligheid van cliënten borgen: zorgalarmering, domotica en medische apparatuur moeten altijd werken. Daar ontwerpen we het netwerk op.</p></div>
     <div class="pillar"><h3>Continu verbeteren</h3><p>We vervangen niet omdat iets oud is, maar omdat het in de gezamenlijke roadmap past.</p></div>
   </div>
 </div></section>
@@ -507,8 +507,9 @@ page('zorg/netwerkregie', 'Netwerkregie voor de zorg – SilverCloud Zorg',
 <section class="section"><div class="container grid-2" style="align-items:start">
   <div><span class="kicker">Architectuur boven producten</span><h2>Eerst het ontwerp, dan de techniek</h2>
   <p class="lead" style="margin-top:16px">Veel leveranciers beginnen bij apparatuur. Wij beginnen bij de architectuur en kiezen daarna de technologie die het beste past. Zo ontstaat een netwerk dat niet afhankelijk is van één fabrikant.</p>
-  <p class="small muted" style="margin-top:16px">Onze standaard doelarchitectuur bouwt op marktleidende technologie, zoals HPE Aruba voor switching en wifi en Fortinet voor next-generation firewalls, met centraal beheer vanuit één omgeving.</p></div>
-  <div class="card"><h3>Het netwerkdesign omvat onder andere</h3><ul class="checklist"><li>Internetconnectiviteit en redundantie</li><li>Netwerksegmentatie (VLAN’s)</li><li>IP-, DNS- en DHCP-structuren</li><li>Wifi-architectuur, met slimme planning van accesspoints</li><li>Securitybeleid</li><li>Monitoring</li><li>Lifecycle van netwerkcomponenten</li></ul></div>
+  <p class="small muted" style="margin-top:16px">Onze standaard doelarchitectuur bouwt op marktleidende technologie, zoals HPE Aruba voor switching en wifi en Fortinet voor next-generation firewalls, met centraal beheer vanuit één omgeving.</p>
+  <p class="small muted" style="margin-top:12px"><strong>Wifi-metingen met Ekahau.</strong> Met professionele Ekahau-meetapparatuur brengen we de wifi-dekking en storingsbronnen op uw locaties in kaart, vooraf bij het ontwerp en achteraf ter controle. Zo weet u zeker dat zorgalarmering, lokalisatie en mobiele devices overal werken.</p></div>
+  <div class="card"><h3>Het netwerkdesign omvat onder andere</h3><ul class="checklist"><li>Internetconnectiviteit en redundantie</li><li>Netwerksegmentatie (VLAN’s)</li><li>IP-, DNS- en DHCP-structuren</li><li>Wifi-architectuur, met slimme planning van accesspoints</li><li>Wifi-metingen en dekkingsanalyses met Ekahau</li><li>Securitybeleid</li><li>Monitoring</li><li>Lifecycle van netwerkcomponenten</li></ul></div>
 </div></section>
 
 <section class="section deep"><div class="container">
@@ -527,9 +528,9 @@ page('zorg/netwerkregie', 'Netwerkregie voor de zorg – SilverCloud Zorg',
   <div class="table-wrap"><table>
     <thead><tr><th>Locatietype</th><th>Focus van het bouwblok</th></tr></thead>
     <tbody>
-      <tr><td>Woonzorglocaties</td><td class="us">Veel domotica, zorgalarmering en veilige cliënten-wifi</td></tr>
-      <tr><td>Behandelcentra</td><td class="us">Snelle, veilige toegang tot het ECD en stabiele medische IoT</td></tr>
-      <tr><td>Hoofdkantoren</td><td class="us">Cloudapplicaties, telefonie en hybride werken</td></tr>
+      <tr><td>Woonzorglocaties</td><td class="us">Veel domotica, zorgalarmering, veilige cliënten-wifi en snelle, veilige toegang tot het ECD</td></tr>
+      <tr><td>Behandelcentra</td><td class="us">Snelle, veilige toegang tot het ECD, stabiele medische IoT en veilige cliënten-wifi</td></tr>
+      <tr><td>Hoofdkantoren</td><td class="us">Cloudapplicaties, telefonie, hybride werken en inzicht in de data van alle locaties</td></tr>
       <tr><td>Ambulante zorg</td><td class="us">Veilige toegang onderweg en thuis, via Zero Trust</td></tr>
     </tbody></table></div>
   <ul class="checklist" style="margin-top:32px">
@@ -552,8 +553,8 @@ page('zorg/netwerkregie', 'Netwerkregie voor de zorg – SilverCloud Zorg',
   <div class="section-head"><span class="kicker">Vier disciplines, één regiemodel</span><h2>Wat we dagelijks voor u doen</h2></div>
   <div class="grid-4">
     <div class="card flat">{icon('oog')}<h3>Monitoring</h3><p>24/7 inzicht in beschikbaarheid en prestaties.</p></div>
-    <div class="card flat">{icon('bel')}<h3>Reactief beheer</h3><p>Storingen snel en gecontroleerd oplossen.</p></div>
     <div class="card flat">{icon('schild')}<h3>Proactief beheer</h3><p>Preventief onderhoud, firmware-updates en capaciteitsanalyses.</p></div>
+    <div class="card flat">{icon('bel')}<h3>Reactief beheer</h3><p>Storingen snel en gecontroleerd oplossen.</p></div>
     <div class="card flat">{icon('pad')}<h3>Doorontwikkeling</h3><p>Lifecyclemanagement, innovatie en strategisch advies.</p></div>
   </div>
 </div></section>
@@ -577,10 +578,10 @@ page('zorg/netwerkregie', 'Netwerkregie voor de zorg – SilverCloud Zorg',
 
 <section class="section"><div class="container">
   <div class="section-head"><span class="kicker">Verdieping</span><h2>Meer over netwerken in de zorg</h2><p><a class="btn-link" href="{r}blog/#netwerk">Alle artikelen over netwerk &amp; ICT</a></p></div>
-  {latest(r, 3, slugs=['het-belang-van-een-goed-netwerk-voor-jouw-zorginstelling', 'vier-it-trends-die-de-zorg-transformeren-van-administratielast-naar-ai', 'zo-zorg-je-voor-de-juiste-infrastructuur-om-ble-op-locatie-te-gebruiken'])}
+  {latest(r, 3, slugs=['het-belang-van-een-goed-netwerk-voor-jouw-zorginstelling', 'zo-zorg-je-voor-de-juiste-infrastructuur-om-ble-op-locatie-te-gebruiken'])}
 </div></section>
 
-{zorgkennis(r, True)}
+{zorgkennis(r)}
 
 {certs(r)}
 
@@ -599,7 +600,7 @@ page('zorg/caredesk', 'CareDesk – de servicedesk voor de zorg – SilverCloud 
  'CareDesk is meer dan een helpdesk: een complete serviceorganisatie voor zorg-ICT, met kennis van ECD’s, Zenya en AFAS, één aanspreekpunt en regie richting al uw leveranciers.', f'''
 <section class="hero"><div class="container hero-grid">
   <div>
-    <span class="badge">Propositie 02 · CareDesk</span>
+    <span class="badge">CareDesk</span>
     <h1 class="display">Een servicedesk die de taal van de zorg spreekt</h1>
     <p class="lead">CareDesk is meer dan een helpdesk. Het is een complete serviceorganisatie voor zorg-ICT: ondersteuning, beheer, regie, advies en procesverbetering in één dienst. Wij kennen de cultuur van de zorg en de applicaties waarmee uw medewerkers werken.</p>
     <div class="actions"><a class="btn btn-primary" href="{r}afspraak/">Plan een kennismaking</a><a class="btn btn-secondary" href="{r}assets/downloads/brochure-caredesk.pdf" download>Download de brochure</a></div>
@@ -676,7 +677,7 @@ page('zorg/caredesk', 'CareDesk – de servicedesk voor de zorg – SilverCloud 
   {latest(r, 3, slugs=['helpdesk-uitbesteden-de-eerste-stap-naar-strategische-it', 'vier-it-trends-die-de-zorg-transformeren-van-administratielast-naar-ai', 'wildgroei-aan-applicaties-zo-hou-je-overzicht-in-je-applicatielandschap'])}
 </div></section>
 
-{zorgkennis(r, True)}
+{zorgkennis(r)}
 
 {certs(r)}
 
@@ -689,7 +690,7 @@ page('zorg/zorgtechnologie', 'Zorgtechnologie – SilverCloud Zorg',
  'Zorgtechnologie die werkt op de werkvloer: lokalisatie & leefcirkels, medewerkersveiligheid en hulpmiddelenbeheer. Evresys en Blyott, geleverd en geïntegreerd door SilverCloud Zorg.', f'''
 <section class="hero"><div class="container hero-grid">
   <div>
-    <span class="badge">Propositie 03 · Zorgtechnologie</span>
+    <span class="badge">Zorgtechnologie</span>
     <h1 class="display">Zorgtechnologie die werkt op de werkvloer</h1>
     <p class="lead">Meer vrijheid voor cliënten, veiligheid voor medewerkers en minder zoeken naar hulpmiddelen. SilverCloud levert de oplossingen van Evresys en Blyott als volledige integrator: van advies en netwerk tot wearables, koppelingen, adoptie en beheer.</p>
     <div class="actions"><a class="btn btn-primary" href="{r}afspraak/">Plan een adviesgesprek</a><a class="btn btn-link" href="#toepassingen">Bekijk de toepassingen</a></div>
@@ -744,7 +745,7 @@ page('zorg/zorgtechnologie', 'Zorgtechnologie – SilverCloud Zorg',
   <div class="actions" style="margin-top:32px"><a class="btn btn-secondary" href="{r}assets/downloads/whitepaper-evresys-twee-routes.pdf" download>Whitepaper: twee routes</a><a class="btn btn-secondary" href="{r}assets/downloads/10-voordelen-realtime-lokalisatie.pdf" download>10 voordelen van realtime lokalisatie</a></div>
 </div></section>
 
-{zorgkennis(r, True)}
+{zorgkennis(r)}
 
 {certs(r)}
 
