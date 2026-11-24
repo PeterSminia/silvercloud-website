@@ -120,6 +120,7 @@ REDIRECTS = {
     'realtime-lokalisatie-oud-back-up': 'zorg/lokalisatie-leefcirkels/', 'cloud-based-iot-monitoring': 'zorg/lokalisatie-leefcirkels/',
     'intelligente-netwerken': 'zorg/netwerkregie/', 'support': 'contact/', '10-voordelen-realtime-lokalisatie': 'kennis/',
     'slimme-vergaderkamers': 'kennis/', 'iso-9001-27001-nen-7510': 'over-ons/', 'netwerkregie': 'zorg/netwerkregie/', 'caredesk': 'zorg/caredesk/',
+    'privacybeleid': 'privacyverklaring/', 'cookiebeleid-eu': 'cookiebeleid/',
 }
 
 
@@ -222,7 +223,7 @@ var h=location.hash.slice(1);if(h){{var c=document.querySelector('.chip[data-cat
 
     # sitemap
     paths = ['', 'computing/', 'zorg/', 'zorg/netwerkregie/', 'zorg/caredesk/', 'zorg/zorgtechnologie/', 'zorg/lokalisatie-leefcirkels/', 'zorg/medewerkersveiligheid/', 'zorg/assetguard/',
-             'kennis/', 'blog/', 'partners/', 'over-ons/', 'contact/'] + [f'blog/{p["slug"]}/' for p in POSTS]
+             'kennis/', 'blog/', 'partners/', 'over-ons/', 'contact/', 'kwaliteit-informatiebeveiliging/', 'privacyverklaring/', 'cookiebeleid/', 'toegankelijkheidsverklaring/'] + [f'blog/{p["slug"]}/' for p in POSTS]
     base = 'https://petersminia.github.io/silvercloud-website/'
     open(os.path.join(out, 'sitemap.xml'), 'w', encoding='utf-8').write(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' +
@@ -237,7 +238,7 @@ CERT_URLS = [('NEN 7510', 'Informatiebeveiliging in de zorg', OLD + '2021/01/302
 def certs(r, tekst='Wij werken aantoonbaar zorgvuldig: onze kwaliteit en informatiebeveiliging zijn onafhankelijk gecertificeerd. Voor de zorg betekent NEN 7510 dat we voldoen aan de norm voor informatiebeveiliging in de zorg.'):
     items = ''.join(f'<a class="cert" href="{u}" rel="noopener"><span class="cert-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><span><strong>{n}</strong><small>{d}</small></span></a>' for n, d, u in CERT_URLS)
     return (f'<section class="section certs-band"><div class="container certs-grid"><div><span class="kicker">Gecertificeerd</span>'
-            f'<h2>NEN 7510, ISO 27001 en ISO 9001</h2><p class="muted" style="margin-top:12px">{tekst}</p></div><div class="certs">{items}</div></div></section>')
+            f'<h2>NEN 7510, ISO 27001 en ISO 9001</h2><p class="muted" style="margin-top:12px">{tekst}</p><p style="margin-top:12px"><a class="btn-link" href="{r}kwaliteit-informatiebeveiliging/">Ons kwaliteits- en informatiebeveiligingsbeleid</a></p></div><div class="certs">{items}</div></div></section>')
 
 
 def afspraak_page(page, r='../'):

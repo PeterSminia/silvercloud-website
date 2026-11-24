@@ -80,9 +80,9 @@ def page(path, title, desc, body, label='', nav='', sub=None):
       </div>
       <div><h4>Computing</h4><ul><li><a href="{r}computing/#werkplek">Moderne werkplek</a></li><li><a href="{r}computing/#netwerken">Veilig netwerk</a></li><li><a href="{r}computing/#applicaties">Toegang tot applicaties</a></li><li><a href="{r}computing/#helpdesk">Servicedesk</a></li></ul></div>
       <div><h4>Zorg</h4><ul><li><a href="{r}zorg/netwerkregie/">Netwerkregie</a></li><li><a href="{r}zorg/caredesk/">CareDesk</a></li><li><a href="{r}zorg/zorgtechnologie/">Zorgtechnologie</a></li><li><a href="{r}zorg/lokalisatie-leefcirkels/">Lokalisatie &amp; Leefcirkels</a></li><li><a href="{r}zorg/medewerkersveiligheid/">Medewerkersveiligheid</a></li><li><a href="{r}zorg/assetguard/">Hulpmiddelenbeheer (AssetGuard)</a></li></ul></div>
-      <div><h4>SilverCloud</h4><ul><li><a href="{r}over-ons/">Over ons &amp; werkwijze</a></li><li><a href="{r}kennis/">Kennis &amp; cases</a></li><li><a href="{r}blog/">Blog</a></li><li><a href="{r}partners/">Partners</a></li><li><a href="{r}afspraak/">Plan een afspraak</a></li><li><a href="{r}contact/">Contact</a></li><li><a href="https://www.silvercloudzorgiot.nl/privacybeleid/">Privacyverklaring</a></li></ul></div>
+      <div><h4>SilverCloud</h4><ul><li><a href="{r}over-ons/">Over ons &amp; werkwijze</a></li><li><a href="{r}kennis/">Kennis &amp; cases</a></li><li><a href="{r}blog/">Blog</a></li><li><a href="{r}partners/">Partners</a></li><li><a href="{r}afspraak/">Plan een afspraak</a></li><li><a href="{r}contact/">Contact</a></li><li><a href="{r}kwaliteit-informatiebeveiliging/">Kwaliteit &amp; certificering</a></li></ul></div>
     </div>
-    <div class="footer-bottom"><span>© 2026 SilverCloud</span><span>Ohmstraat 18-A, 3861 NB Nijkerk · <a href="tel:+31882560050">088 256 00 50</a> · <a href="mailto:info@silvercloud.nl">info@silvercloud.nl</a> · KvK [invullen]</span></div>
+    <div class="footer-bottom"><span>© 2026 SilverCloud</span><span>Ohmstraat 18-A, 3861 NB Nijkerk · <a href="tel:+31882560050">088 256 00 50</a> · <a href="mailto:info@silvercloud.nl">info@silvercloud.nl</a> · KvK [invullen]</span><span><a href="{r}privacyverklaring/">Privacyverklaring</a> · <a href="{r}cookiebeleid/">Cookiebeleid</a> · <a href="{r}toegankelijkheidsverklaring/">Toegankelijkheid</a></span></div>
   </div>
 </footer>
 <span class="concept" title="Voorstel, nog niet definitief">Concept v0.4</span>
@@ -322,7 +322,7 @@ page('computing', 'SilverCloud Computing – Uw ICT-partner voor het mkb',
   <div class="section-head"><span class="kicker">Wat we doen voor het mkb</span><h2>Alles wat uw ICT nodig heeft, onder één dak</h2>
   <div class="lijn"><p class="lead">U hoeft niet te weten hoe het werkt. U moet erop kunnen rekenen.</p></div></div>
   <div class="grid-3">
-    <div class="card" id="werkplek">{icon('werkplek')}<h3>Moderne werkplek</h3><p>Met BrainOnline 375 krijgt u een complete, beheerde werkplek: Microsoft 365, laptops en telefoons, door ons ingericht, beveiligd en up-to-date gehouden. Iedereen werkt in dezelfde vertrouwde omgeving, en een nieuwe collega kan op dag één aan de slag.</p></div>
+    <div class="card" id="werkplek">{icon('werkplek')}<h3>Moderne werkplek</h3><p>BrainOnline 375 is Microsoft 365, maar dan compleet. We vullen het aan met wat u als ondernemer echt nodig heeft, zoals een betere back-up en volledige support. Waar gewenst beheren we ook uw laptops en telefoons met Microsoft Intune. Daarom heet het 375: het gaat verder dan 365.</p></div>
     <div class="card" id="netwerken">{icon('netwerk')}<h3>Veilig netwerk</h3><p>Een netwerk dat is ontworpen voor uw organisatie, in plaats van gegroeid naar uw organisatie. Met proactieve monitoring en beheer, de juiste beveiligingsinstellingen en een internetverbinding die past bij uw locatie.</p></div>
     <div class="card" id="applicaties">{icon('cloud')}<h3>Toegang tot al uw applicaties</h3><p>Waar uw boekhouding, CRM, ERP en andere applicaties het ondersteunen, regelen we één veilige login (Single Sign-On) met meervoudige authenticatie. Voor applicaties die dat niet kunnen, zoeken we samen de veiligste werkbare oplossing.</p></div>
     <div class="card" id="beveiliging">{icon('schild')}<h3>Beveiliging &amp; back-up</h3><p>Updates, bescherming tegen virussen en phishing, en een back-up die verder gaat dan de standaardvoorziening van Microsoft. Gaat er iets mis, dan bent u snel weer aan het werk.</p></div>
@@ -1134,7 +1134,7 @@ page('over-ons', 'Over SilverCloud – werkwijze en visie',
 <section class="section"><div class="container grid-2" style="align-items:start">
   <div><span class="kicker">Kwaliteit &amp; informatiebeveiliging</span><h2>Gecertificeerd, en dat merkt u in het werk</h2>
   <p class="lead" style="margin-top:16px">Certificering is voor ons geen stempel, maar een manier van werken: continu verbeteren en zorgvuldig omgaan met informatie.</p></div>
-  <ul class="checklist"><li><strong>NEN 7510</strong>: informatiebeveiliging in de zorg</li><li><strong>ISO 27001</strong>: informatiebeveiliging</li><li><strong>ISO 9001</strong>: kwaliteitsmanagement</li></ul>
+  <div><ul class="checklist"><li><strong>NEN 7510</strong>: informatiebeveiliging in de zorg</li><li><strong>ISO 27001</strong>: informatiebeveiliging</li><li><strong>ISO 9001</strong>: kwaliteitsmanagement</li></ul><p style="margin-top:16px"><a class="btn-link" href="{r}kwaliteit-informatiebeveiliging/">Ons beleid en de certificaten</a></p></div>
 </div></section>
 
 <section class="section mist"><div class="container">
@@ -1170,4 +1170,6 @@ page('contact', 'Contact – SilverCloud', 'Neem contact op met SilverCloud voor
 ''', nav='')
 extra.build(page, cta, OUT)
 extra.afspraak_page(page)
+import juridisch
+juridisch.build(page, OUT)
 print('ok')
