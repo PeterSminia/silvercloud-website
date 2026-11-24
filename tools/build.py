@@ -119,7 +119,7 @@ WERKWIJZE = [('Luisteren', 'Zorgproces of bedrijfsvoering, techniek, risico’s 
              ('Implementeren', 'Projectmatig, met duidelijke verantwoordelijkheden en minimale verstoring.'),
              ('Adoptie', 'Gebruikers, beheerders en processen meenemen in de verandering.'),
              ('Beheren', 'Prestaties bewaken en leveranciers op elkaar laten aansluiten.'),
-             ('Verbeteren', 'Rapportages en nieuwe mogelijkheden periodiek samen evalueren.')]
+             ('Verbeteren', 'Roadmap, rapportages en nieuwe mogelijkheden periodiek evalueren.')]
 
 # ---------- Illustraties ----------
 HERO_HOME = '''<svg viewBox="0 0 560 460" role="img" aria-label="Illustratie: SilverCloud verbindt mkb en zorg onder één wolk">
@@ -289,7 +289,7 @@ page('', 'SilverCloud – Betrouwbare IT voor het mkb en de zorg',
     <span class="kicker" style="color:var(--merk-oranje)">Uitgelicht · SilverCloud Zorg</span>
     <h2>Netwerkregie: een netwerk waarop de zorg kan vertrouwen</h2>
     <p class="lead" style="margin-top:16px">Niet méér netwerkbeheer: u houdt de regie, wij regelen het beheer. Eén architectuur, security by design, open calculatie op hardware en verbindingen, en desgewenst gedeelde monitoring met uw eigen ICT-afdeling.</p>
-    <div class="actions"><a class="btn btn-highlight" href="zorg/netwerkregie/">Meer over Netwerkregie</a></div>
+    <div class="actions"><a class="btn btn-highlight" href="zorg/netwerkregie/">Meer over Netwerkregie</a><a class="btn btn-secondary" style="color:#fff;border-color:#fff" href="assets/downloads/whitepaper-netwerkregie-zorg.pdf" download>Download de whitepaper</a></div>
   </div>
   <div class="uniek" style="grid-template-columns:1fr 1fr">
     <div><h3>Architectuur</h3><p>Eén integraal netwerkdesign als fundament.</p></div>
@@ -303,7 +303,7 @@ page('', 'SilverCloud – Betrouwbare IT voor het mkb en de zorg',
   <div class="grid-4">
     <div class="card flat">{icon('oog')}<h3>Wij kennen uw praktijk</h3><p>We begrijpen wat een storing betekent op de werkvloer, in de winkel of op de afdeling.</p></div>
     <div class="card flat">{icon('netwerk')}<h3>Samenhang</h3><p>Architectuur, implementatie, leveranciersregie en beheer in één hand.</p></div>
-    <div class="card flat">{icon('klok')}<h3>Continuïteit</h3><p>We denken in levenscyclus, niet in losse projecten.</p></div>
+    <div class="card flat">{icon('klok')}<h3>Continuïteit</h3><p>We denken in levenscyclus en roadmap, niet in losse projecten.</p></div>
     <div class="card flat">{icon('mens')}<h3>Korte lijnen</h3><p>Persoonlijk contact met specialisten die uw omgeving kennen.</p></div>
   </div>
 </div></section>
@@ -399,7 +399,7 @@ page('zorg', 'SilverCloud Zorg – Technologie die werkt voor de zorg',
     <span class="badge">SilverCloud Zorg</span>
     <h1 class="display">Technologie die werkt voor de zorg</h1>
     <p class="lead">Het begint bij een netwerk waarop de zorg kan vertrouwen. SilverCloud voert regie over uw digitale infrastructuur en bouwt daarop verder met een servicedesk en zorgtechnologie die werken op de werkvloer.</p>
-    <div class="actions"><a class="btn btn-primary" href="#oplossingen">Bekijk onze oplossingen</a><a class="btn btn-secondary" href="{r}contact/">Plan een kennismaking</a></div>
+    <div class="actions"><a class="btn btn-primary" href="netwerkregie/">Ontdek Netwerkregie</a><a class="btn btn-secondary" href="{r}assets/downloads/whitepaper-netwerkregie-zorg.pdf" download>Download de whitepaper</a></div>
   </div>
   <div class="hero-visual">{HERO_ZORG}
   <div class="hero-logos"><img src="{r}assets/img/silvercloud-zorg-logo-kleur.svg" alt="SilverCloud Zorg"></div></div>
@@ -416,7 +416,7 @@ page('zorg', 'SilverCloud Zorg – Technologie die werkt voor de zorg',
     <div><h3>Architectuur</h3><p>Eén integraal netwerkdesign als fundament.</p></div>
     <div><h3>U de regie, wij het beheer</h3><p>U houdt de touwtjes in handen, wij zorgen dat het netwerk werkt.</p></div>
     <div><h3>Transparantie</h3><p>Open calculatie op netwerkhardware en verbindingen. Gedeelde monitoring is mogelijk.</p></div>
-    <div><h3>Continu verbeteren</h3><p>We evalueren periodiek samen en verbeteren waar het nodig is.</p></div>
+    <div><h3>Continu verbeteren</h3><p>Eén gezamenlijke roadmap.</p></div>
   </div>
 </div></section>
 
@@ -443,7 +443,7 @@ page('zorg', 'SilverCloud Zorg – Technologie die werkt voor de zorg',
     <div><h3>Gedeelde monitoring</h3><p>Desgewenst kijkt uw eigen ICT-afdeling mee in dezelfde dashboards, meldingen en rapportages, zoals PRTG, FortiAnalyzer en FortiManager.</p></div>
     <div><h3>Kennis van de zorg</h3><p>We weten wat uitval betekent voor zorgalarmering, domotica en het ECD. We gaan pas weg als de zorg weer operationeel is.</p></div>
     <div><h3>Volledige integrator</h3><p>Van netwerk tot wearable en koppeling: wij leveren, integreren en beheren. Waar wenselijk zitten fabrikant (zoals HPE of Evresys), integrator en u samen aan tafel.</p></div>
-    <div><h3>Eén team met uw ICT</h3><p>Heldere rollen, gedeelde kennis en periodiek samen vooruitkijken.</p></div>
+    <div><h3>Eén team met uw ICT</h3><p>Heldere rollen, gedeelde kennis en een gezamenlijke meerjarenroadmap.</p></div>
   </div>
 </div></section>
 
@@ -473,7 +473,7 @@ page('zorg/netwerkregie', 'Netwerkregie voor de zorg – SilverCloud Zorg',
     <span class="badge">Propositie 01 · Netwerkregie</span>
     <h1 class="display">Een netwerk waarop de zorg kan vertrouwen</h1>
     <p class="lead">Niet méér netwerkbeheer, wel grip op uw netwerkinfrastructuur. U houdt de regie, wij nemen het beheer uit handen: architectuur, beveiliging, beschikbaarheid en doorontwikkeling, voor de volledige levenscyclus van uw netwerk.</p>
-    <div class="actions"><a class="btn btn-primary" href="{r}contact/">Plan een netwerkgesprek</a></div>
+    <div class="actions"><a class="btn btn-primary" href="{r}contact/">Plan een netwerkgesprek</a><a class="btn btn-secondary" href="{r}assets/downloads/whitepaper-netwerkregie-zorg.pdf" download>Download de whitepaper</a></div>
   </div>
   <div class="hero-visual"><div class="prop-card" style="pointer-events:none">{art('net').replace('viewBox="0 0 320 180"','viewBox="0 0 320 180" style="border-radius:14px"')}</div></div>
 </div></section>
@@ -489,7 +489,7 @@ page('zorg/netwerkregie', 'Netwerkregie voor de zorg – SilverCloud Zorg',
   <div class="section-head"><span class="kicker">Van beheer naar regie</span><h2>De paradigmaverschuiving</h2></div>
   <div class="compare">
     <div class="before"><h3>Traditioneel netwerkbeheer</h3><ul><li>Apparatuurgedreven: start bij de techniek</li><li>Reactief: wachten tot het stuk gaat</li><li>Losse projecten en leveranciers</li><li>Vervangen wanneer het nodig is</li><li>Black box: verborgen marges, beperkt inzicht</li></ul></div>
-    <div class="after"><h3>SilverCloud Netwerkregie</h3><ul><li>Architectuurgedreven: start bij het integrale design</li><li>Proactief: monitoring en lifecyclemanagement</li><li>Netwerk als onderdeel van de zorgketen</li><li>Vernieuwen volgens een gezamenlijk vervangingsplan</li><li>Open calculatie op hardware en verbindingen, gedeelde dashboards mogelijk</li></ul></div>
+    <div class="after"><h3>SilverCloud Netwerkregie</h3><ul><li>Architectuurgedreven: start bij het integrale design</li><li>Proactief: monitoring en lifecyclemanagement</li><li>Netwerk als onderdeel van de zorgketen</li><li>Vernieuwen volgens een gezamenlijke roadmap</li><li>Open calculatie op hardware en verbindingen, gedeelde dashboards mogelijk</li></ul></div>
   </div>
 </div></section>
 
@@ -500,7 +500,7 @@ page('zorg/netwerkregie', 'Netwerkregie voor de zorg – SilverCloud Zorg',
     <div class="pillar"><h3>Regie</h3><p>Verantwoordelijk voor ontwerp, implementatie, beheer, beveiliging, monitoring, lifecycle en innovatie.</p></div>
     <div class="pillar"><h3>Transparantie</h3><p>Open calculatie en monitoring die ook uw eigen ICT-afdeling realtime inzicht geeft.</p></div>
     <div class="pillar"><h3>Voor de zorg</h3><p>Maximale beschikbaarheid, veilige segmentatie en een inrichting die past bij de functie van de locatie.</p></div>
-    <div class="pillar"><h3>Continu verbeteren</h3><p>We vervangen niet omdat iets oud is, maar omdat het in het gezamenlijke vervangingsplan past.</p></div>
+    <div class="pillar"><h3>Continu verbeteren</h3><p>We vervangen niet omdat iets oud is, maar omdat het in de gezamenlijke roadmap past.</p></div>
   </div>
 </div></section>
 
@@ -561,14 +561,14 @@ page('zorg/netwerkregie', 'Netwerkregie voor de zorg – SilverCloud Zorg',
 <section class="section mist"><div class="container">
   <div class="section-head"><span class="kicker">De overstap</span><h2>Een gecontroleerde transitie naar rust</h2><p class="lead">U hoeft niet eerst alles te vervangen. We nemen het beheer over zoals het is en moderniseren stap voor stap.</p></div>
   <div class="grid-2">
-    <div class="route"><span class="badge">Fase 1</span><h3>Transitie &amp; implementatie</h3><ul class="checklist"><li>Beheeroverdracht ‘as-is’: direct operationele verantwoordelijkheid</li><li>Inventarisatie en integraal netwerkdesign</li><li>Elke storing is een stap richting de doelarchitectuur</li><li>Gefaseerde modernisering volgens een gezamenlijk plan</li></ul></div>
+    <div class="route"><span class="badge">Fase 1</span><h3>Transitie &amp; implementatie</h3><ul class="checklist"><li>Beheeroverdracht ‘as-is’: direct operationele verantwoordelijkheid</li><li>Inventarisatie en integraal netwerkdesign</li><li>Elke storing is een stap richting de doelarchitectuur</li><li>Gefaseerde modernisering volgens de gezamenlijke roadmap</li></ul></div>
     <div class="route voorkeur"><span class="badge">Fase 2</span><h3>Reguliere dienstverlening</h3><ul class="checklist"><li>Netwerk volledig gestandaardiseerd</li><li>Centraal beheer, monitoring en updates op afstand</li><li>Van reactief blussen naar strategisch doorontwikkelen</li></ul></div>
   </div>
 </div></section>
 
 <section class="section mist"><div class="container narrow">
   <span class="kicker">Veelgestelde vragen</span><h2 style="margin-bottom:16px">Goed om te weten</h2>
-  <details><summary>Moeten we ons huidige netwerk eerst vervangen?</summary><p>Nee. We nemen het beheer ‘as-is’ over om de continuïteit te borgen. Daarna moderniseren we gefaseerd: defecte of verouderde apparatuur wordt vervangen door de nieuwe standaard, volgens een gezamenlijk plan.</p></details>
+  <details><summary>Moeten we ons huidige netwerk eerst vervangen?</summary><p>Nee. We nemen het beheer ‘as-is’ over om de continuïteit te borgen. Daarna moderniseren we gefaseerd: defecte of verouderde apparatuur wordt vervangen door de nieuwe standaard, binnen de gezamenlijke roadmap.</p></details>
   <details><summary>Werkt SilverCloud met één vast merk?</summary><p>We beginnen bij de architectuur, niet bij een merk. Onze standaard doelarchitectuur gebruikt marktleidende technologie zoals HPE Aruba en Fortinet, omdat die centraal beheer en security goed ondersteunt. De keuze volgt altijd het ontwerp.</p></details>
   <details><summary>Wat ziet onze eigen ICT-afdeling?</summary><p>Hetzelfde als wij. Monitoringdashboards, meldingen en rapportages zijn volledig inzichtelijk voor uw interne ICT. We werken als één team met heldere rollen.</p></details>
   <details><summary>Hoe zijn de kosten opgebouwd?</summary><p>Hardware en licenties leveren we op basis van open calculatie: inzichtelijke inkoopprijs plus een vooraf afgesproken vast opslagpercentage. Het beheer is een vaste vergoeding op basis van omvang en complexiteit van uw locaties.</p></details>
@@ -584,7 +584,12 @@ page('zorg/netwerkregie', 'Netwerkregie voor de zorg – SilverCloud Zorg',
 
 {certs(r)}
 
-{cta('Klaar voor een netwerk dat de zorg ondersteunt?', 'Bespreek uw huidige architectuur met onze specialisten. We laten zien wat Netwerkregie betekent voor beschikbaarheid, veiligheid en investeringen.', 'Plan een netwerkgesprek', r + 'contact/', r)}
+<section class="section"><div class="container grid-2" style="align-items:center">
+  <div><span class="kicker">Whitepaper</span><h2>Lees onze visie op Netwerkregie</h2><p class="lead" style="margin-top:16px">De vijf uitgangspunten, slimme wifi-planning en onze aanpak, in één document.</p></div>
+  {wp_card(r)}
+</div></section>
+
+{cta('Klaar voor een netwerk dat de zorg ondersteunt?', 'Bespreek uw huidige architectuur met onze specialisten. We laten zien wat Netwerkregie betekent voor beschikbaarheid, veiligheid en investeringen.', 'Plan een netwerkgesprek', r + 'contact/', r, 'Download de whitepaper', r + 'assets/downloads/whitepaper-netwerkregie-zorg.pdf')}
 ''', label='zorg', nav='zorg', sub='netwerkregie')
 
 # ---------- CAREDESK ----------
@@ -1020,7 +1025,7 @@ page('zorg/assetguard', 'Hulpmiddelenbeheer met AssetGuard – SilverCloud Zorg'
 # ---------- KENNIS & CASES ----------
 r = '../'
 page('kennis', 'Kennis & cases – SilverCloud',
- 'Praktijkverhalen van zorgorganisaties, whitepapers over lokalisatie, video’s en de blog van SilverCloud.', f'''
+ 'Praktijkverhalen van zorgorganisaties, whitepapers over netwerkregie en lokalisatie, video’s en de blog van SilverCloud.', f'''
 <section class="hero"><div class="container narrow">
   <span class="badge">Kennis &amp; cases</span>
   <h1 class="display" style="margin:16px 0">Uit de praktijk</h1>
@@ -1066,6 +1071,7 @@ page('kennis', 'Kennis & cases – SilverCloud',
 <section class="section"><div class="container">
   <div class="section-head"><span class="kicker">Downloads</span><h2>Whitepapers en factsheets</h2></div>
   <div class="grid-3">
+    {wp_card(r)}
     <a class="card download" href="{r}assets/downloads/brochure-caredesk.pdf" download>{icon('helpdesk')}<h3>Brochure CareDesk</h3><p>Dé servicedesk voor zorgorganisaties: overnemen, versterken of optimaliseren.</p><span class="btn-link">Download (pdf)</span></a>
     <a class="card download" href="{r}assets/downloads/whitepaper-evresys-twee-routes.pdf" download>{icon('cirkel')}<h3>Twee routes naar slimme zorgtechnologie</h3><p>Evresys als totaaloplossing of als aanvulling op een bestaand zorgoproepsysteem.</p><span class="btn-link">Download (pdf)</span></a>
     <a class="card download" href="{r}assets/downloads/whitepaper-evresys-totaaloplossing.pdf" download>{icon('bel')}<h3>Evresys als totaaloplossing</h3><p>Voor kleinere zorgorganisaties en nieuwe locaties zonder zorgoproepsysteem.</p><span class="btn-link">Download (pdf)</span></a>
@@ -1101,7 +1107,7 @@ page('over-ons', 'Over SilverCloud – werkwijze en visie',
   <span class="badge">Over SilverCloud</span>
   <h1 class="display" style="margin:16px 0">ICT-specialisten die de zorg kennen</h1>
   <p class="lead">SilverCloud helpt organisaties om technologie betrouwbaar onderdeel te maken van hun dagelijkse werk. In de zorg betekent dat: weten hoe zorgteams werken, welke uitdagingen er spelen, welke applicaties en zorgtechnologie er draaien en hoe je daarover communiceert. Die kennis is ons vertrekpunt, de techniek volgt.</p>
-  <div class="lijn"><p>We werken naast uw interne organisatie en andere leveranciers. Niet vanuit losse producten, maar vanuit architectuur, duidelijke regie en gezamenlijke planning. Zo ontstaat een omgeving die vandaag betrouwbaar werkt en morgen kan meegroeien.</p></div>
+  <div class="lijn"><p>We werken naast uw interne organisatie en andere leveranciers. Niet vanuit losse producten, maar vanuit architectuur, duidelijke regie en een gezamenlijke roadmap. Zo ontstaat een omgeving die vandaag betrouwbaar werkt en morgen kan meegroeien.</p></div>
 </div></section>
 
 {zorgkennis(r)}
