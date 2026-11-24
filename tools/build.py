@@ -974,6 +974,15 @@ page('zorg/assetguard', 'Hulpmiddelenbeheer met AssetGuard – SilverCloud Zorg'
   </div>
 </div></section>
 
+<section class="section"><div class="container">
+  <div class="section-head"><span class="kicker">In beeld</span><h2>Hulpmiddelenbeheer in drie korte video’s</h2><p class="lead">Wat realtime lokalisatie van hulpmiddelen betekent voor de zorgmedewerker, de manager en uw assetmanagement.</p></div>
+  <div class="grid-3">
+    <div><div class="video"><iframe src="https://player.vimeo.com/video/555632960?dnt=1" title="Zorgmedewerker in de praktijk" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe></div><h3 style="margin:16px 0 6px">Zorgmedewerker in de praktijk</h3><p class="muted" style="margin:0">Nooit meer zoeken naar apparatuur en hulpmiddelen. Minder frustratie en meer tijd voor uw cliënten: technologie die werkt voor u als zorgmedewerker.</p></div>
+    <div><div class="video"><iframe src="https://player.vimeo.com/video/555633421?dnt=1" title="Zorgmanager met de juiste tools" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe></div><h3 style="margin:16px 0 6px">Zorgmanager met de juiste tools</h3><p class="muted" style="margin:0">Hoe beoordeelt u investeringsaanvragen zonder inzicht in de gebruiksgraad van de aanwezige hulpmiddelen? Met rapportages wordt bestaande apparatuur beter benut en gaat u duurzaam om met hulpmiddelen.</p></div>
+    <div><div class="video"><iframe src="https://player.vimeo.com/video/908604204?dnt=1" title="Integratie met TOPdesk" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe></div><h3 style="margin:16px 0 6px">Integratie met TOPdesk</h3><p class="muted" style="margin:0">Door realtime lokalisatie te koppelen aan uw TOPdesk-assetmanagement krijgt u een beter, actueel en consistent inzicht in uw hulpmiddelen.</p></div>
+  </div>
+</div></section>
+
 <section class="section mist" id="modules"><div class="container">
   <div class="section-head"><span class="kicker">Modulair platform</span><h2>Begin met vinden, groei naar regie</h2>
   <p class="lead">AssetGuard bestaat uit modules die u stap voor stap inzet. Alles wordt geleverd als ontzorgende dienst op het platform van <a href="{BLYOTT_AT}" rel="noopener" target="_blank">Blyott</a>, met SilverCloud als integrator.</p></div>
@@ -1086,9 +1095,9 @@ page('kennis', 'Kennis & cases – SilverCloud',
   <div class="section-head"><span class="kicker">Video &amp; webinars</span><h2>Bekijk en luister</h2></div>
   <div class="grid-2">
     <div class="video"><iframe src="https://player.vimeo.com/video/885122327?dnt=1" title="Webinar realtime lokalisatie" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe></div>
-    <div class="video"><iframe src="https://player.vimeo.com/video/555633421?dnt=1" title="Zorgmedewerker in de praktijk" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe></div>
-    <div class="video"><iframe src="https://player.vimeo.com/video/908604204?dnt=1" title="Zorgmanager met de juiste tools" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe></div>
-    <div class="video"><iframe src="https://player.vimeo.com/video/555632960?dnt=1" title="Realtime lokalisatie in het kort" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe></div>
+    <div class="video"><iframe src="https://player.vimeo.com/video/555633421?dnt=1" title="Zorgmanager met de juiste tools" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe></div>
+    <div class="video"><iframe src="https://player.vimeo.com/video/908604204?dnt=1" title="Integratie met TOPdesk" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe></div>
+    <div class="video"><iframe src="https://player.vimeo.com/video/555632960?dnt=1" title="Zorgmedewerker in de praktijk" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe></div>
   </div>
 </div></section>
 
