@@ -230,13 +230,13 @@ var h=location.hash.slice(1);if(h){{var c=document.querySelector('.chip[data-cat
         ''.join(f'<url><loc>{base}{u}</loc></url>' for u in paths) + '</urlset>\n')
 
 
-CERT_URLS = [('NEN 7510', 'Informatiebeveiliging in de zorg', OLD + '2021/01/30265-1-Certificaat-NEN-7510-PDF.pdf'),
-             ('ISO 27001', 'Informatiebeveiliging', OLD + '2021/01/30265-1-Certificaat-ISO-27001-NL-PDF.pdf'),
-             ('ISO 9001', 'Kwaliteitsmanagement', OLD + '2021/01/30265-1-Certificaat-ISO-9001-NL-PDF1.pdf')]
+CERT_URLS = [('NEN 7510', 'Informatiebeveiliging in de zorg', 'assets/downloads/certificaat-nen-7510.pdf'),
+             ('ISO 27001', 'Informatiebeveiliging', 'assets/downloads/certificaat-iso-27001.pdf'),
+             ('ISO 9001', 'Kwaliteitsmanagement', 'assets/downloads/certificaat-iso-9001.pdf')]
 
 
 def certs(r, tekst='Wij werken aantoonbaar zorgvuldig: onze kwaliteit en informatiebeveiliging zijn onafhankelijk gecertificeerd. Voor de zorg betekent NEN 7510 dat we voldoen aan de norm voor informatiebeveiliging in de zorg.'):
-    items = ''.join(f'<a class="cert" href="{u}" rel="noopener"><span class="cert-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><span><strong>{n}</strong><small>{d}</small></span></a>' for n, d, u in CERT_URLS)
+    items = ''.join(f'<a class="cert" href="{r}{u}"><span class="cert-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><span><strong>{n}</strong><small>{d}</small></span></a>' for n, d, u in CERT_URLS)
     return (f'<section class="section certs-band"><div class="container certs-grid"><div><span class="kicker">Gecertificeerd</span>'
             f'<h2>NEN 7510, ISO 27001 en ISO 9001</h2><p class="muted" style="margin-top:12px">{tekst}</p><p style="margin-top:12px"><a class="btn-link" href="{r}kwaliteit-informatiebeveiliging/">Ons kwaliteits- en informatiebeveiligingsbeleid</a></p></div><div class="certs">{items}</div></div></section>')
 

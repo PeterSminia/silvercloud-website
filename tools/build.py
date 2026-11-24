@@ -76,7 +76,7 @@ def page(path, title, desc, body, label='', nav='', sub=None):
       <div>
         <img class="footer-logo" src="{r}assets/img/silvercloud-logo-kleur-op-donker.svg" alt="SilverCloud">
         <p>Eén partner, twee expertises: betrouwbare IT voor het mkb en technologie die werkt voor de zorg.</p>
-        <div class="footer-certs"><a href="{extra.CERT_URLS[0][2]}">NEN 7510</a><a href="{extra.CERT_URLS[1][2]}">ISO 27001</a><a href="{extra.CERT_URLS[2][2]}">ISO 9001</a></div>
+        <div class="footer-certs"><a href="{r}{extra.CERT_URLS[0][2]}">NEN 7510</a><a href="{r}{extra.CERT_URLS[1][2]}">ISO 27001</a><a href="{r}{extra.CERT_URLS[2][2]}">ISO 9001</a></div>
       </div>
       <div><h4>Computing</h4><ul><li><a href="{r}computing/#werkplek">Moderne werkplek</a></li><li><a href="{r}computing/#netwerken">Veilig netwerk</a></li><li><a href="{r}computing/#applicaties">Toegang tot applicaties</a></li><li><a href="{r}computing/#helpdesk">Servicedesk</a></li></ul></div>
       <div><h4>Zorg</h4><ul><li><a href="{r}zorg/netwerkregie/">Netwerkregie</a></li><li><a href="{r}zorg/caredesk/">CareDesk</a></li><li><a href="{r}zorg/zorgtechnologie/">Zorgtechnologie</a></li><li><a href="{r}zorg/lokalisatie-leefcirkels/">Lokalisatie &amp; Leefcirkels</a></li><li><a href="{r}zorg/medewerkersveiligheid/">Medewerkersveiligheid</a></li><li><a href="{r}zorg/assetguard/">Hulpmiddelenbeheer (AssetGuard)</a></li></ul></div>

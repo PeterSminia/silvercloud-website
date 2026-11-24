@@ -4,10 +4,10 @@ import os
 
 OLD = 'https://www.silvercloudzorgiot.nl/nijkerk/wp-content/uploads/2021/01/'
 PDFS = {
-    'beleid': 'SilverCloud-Kwaliteits-en-Informatiebeveiligingsbeleid-v2b.pdf',
-    'iso9001': '30265-1-Certificaat-ISO-9001-NL-PDF1.pdf',
-    'iso27001': '30265-1-Certificaat-ISO-27001-NL-PDF.pdf',
-    'nen7510': '30265-1-Certificaat-NEN-7510-PDF.pdf',
+    'beleid': 'silvercloud-kwaliteits-en-informatiebeveiligingsbeleid.pdf',
+    'iso9001': 'certificaat-iso-9001.pdf',
+    'iso27001': 'certificaat-iso-27001.pdf',
+    'nen7510': 'certificaat-nen-7510.pdf',
 }
 
 
@@ -171,7 +171,7 @@ def build(page, out):
 <section class="section" style="padding-top:0"><div class="container narrow prose">
 <p>We kijken continu kritisch naar onszelf en naar elkaar, om te controleren dat we hier niet aan tornen. Onze klanten herkennen ons daarin. Toch hebben we bewust de extra stap gezet naar formele certificering voor ISO 9001, ISO 27001 en NEN 7510.</p>
 <p>Een formele certificering geeft vertrouwen, omdat die objectief is vastgesteld: vertrouwen in producten, diensten, (management)processen en medewerkers. Met een certificaat toont een organisatie aan dat ze efficiënt en veilig werkt, dat de werkzaamheden en werkprocessen beheerst worden en dat ze duurzaamheid nastreeft.</p>
-<p>In 2020 behaalden we onze eerste certificering, met ondersteuning van de consultants van Vos Advies. We hebben ons kwaliteitssysteem aangescherpt, beter verwoord en alle medewerkers opnieuw getraind. In december 2020 slaagden we voor de TÜV-audit op alle drie de normen. Sindsdien zijn we opnieuw gecertificeerd, inmiddels volgens de vernieuwde ISO 27001:2022.</p>
+<p>In 2020 behaalden we onze eerste certificering, met ondersteuning van de consultants van Vos Advies. We hebben ons kwaliteitssysteem aangescherpt, beter verwoord en alle medewerkers opnieuw getraind. In december 2020 slaagden we voor de TÜV-audit op alle drie de normen. Sindsdien zijn we opnieuw gecertificeerd, inmiddels volgens de vernieuwde ISO 27001:2022. De huidige certificaten zijn afgegeven door TÜV NORD Nederland en geldig tot januari 2027.</p>
 <p>De certificaten gelden voor zowel SilverCloud Computing als SilverCloud Zorg.</p>
 
 <h2>Wat de normen betekenen</h2>
