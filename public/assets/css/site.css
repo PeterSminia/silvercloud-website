@@ -114,6 +114,9 @@ p { margin: 0 0 var(--space-4); }
 .hero .badge { margin-bottom: var(--space-4); }
 .hero h1 { margin-bottom: var(--space-4); }
 .hero-visual { position: relative; }
+.hero-logos { display: flex; justify-content: space-around; align-items: center; gap: var(--space-8, 32px); margin-top: 24px; }
+.hero-logos img { display: block; height: 68px; width: auto; max-width: 100%; }
+.hero-logos a:first-child img { height: 40px; }
 
 /* Rasters en kaarten */
 .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-6); }

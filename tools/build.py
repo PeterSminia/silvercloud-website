@@ -227,7 +227,8 @@ page('', 'SilverCloud – Betrouwbare IT voor het mkb en de zorg',
     <div class="actions"><a class="btn btn-primary" href="computing/">Voor het mkb</a><a class="btn btn-primary label-zorg" style="--accent:var(--zorg)" href="zorg/">Voor de zorg</a></div>
     <p class="small muted" style="margin-top:16px">Gecertificeerd voor NEN 7510, ISO 27001 en ISO 9001</p>
   </div>
-  <div class="hero-visual">{HERO_HOME}</div>
+  <div class="hero-visual">{HERO_HOME}
+  <div class="hero-logos"><a href="computing/index.html"><img src="assets/img/silvercloud-logo-kleur.svg" alt="SilverCloud Computing"></a><a href="zorg/index.html"><img src="assets/img/silvercloud-zorg-logo-kleur.svg" alt="SilverCloud Zorg"></a></div></div>
 </div></section>
 
 <section class="section mist"><div class="container">
